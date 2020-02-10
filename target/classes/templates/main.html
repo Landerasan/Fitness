@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Тестовая версия сайта</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<!--<div>-->
+<!--    <form method="post">-->
+<!--        <input th:type="text" th:name="text" placeholder="Введите ваш Email">-->
+<!--        <button th:type="submit">Отправить</button>-->
+<!--    </form>-->
+<!--</div>-->
+<form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
+    <input type="hidden" name="receiver" value="410013093652521">
+    <input th:type="text" name="label" placeholder="Введите ваш Email">
+    <input type="hidden" name="quickpay-form" value="shop">
+    <input type="hidden" name="targets" value="${label}">
+    <input type="hidden" name="sum" value="2" data-type="number">
+    <input type="hidden" name="successURL" value="http://localhost:8080/success">
+    <input type="submit" value="Оплатить">
+</form>
+</body>
+</html>
