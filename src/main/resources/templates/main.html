@@ -1,24 +1,31 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Тестовая версия сайта</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
 </head>
 <body>
-<!--<div>-->
-<!--    <form method="post">-->
-<!--        <input th:type="text" th:name="text" placeholder="Введите ваш Email">-->
-<!--        <button th:type="submit">Отправить</button>-->
-<!--    </form>-->
-<!--</div>-->
-<form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
-    <input type="hidden" name="receiver" value="410013093652521">
-    <input th:type="text" name="label" placeholder="Введите ваш Email">
-    <input type="hidden" name="quickpay-form" value="shop">
-    <input type="hidden" name="targets" value="${label}">
-    <input type="hidden" name="sum" value="2" data-type="number">
-    <input type="hidden" name="successURL" value="http://localhost:8080/success">
-    <input type="submit" value="Оплатить">
-</form>
+
+    <header>
+        <div class="container">
+            <div class="logo">Качая<span>Жёпу</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#">ГЛАВНАЯ</a></li>
+                    <li><a href="#">ПИТАНИЕ</a></li>
+                    <li><a href="#">ПРОГРАММЫ ТРЕНИРОВОК</a></li>
+                    <li><a href="#">УСЛУГИ</a></li>
+                    <li><a href="#">ОБ АВТОРКЕ</a></li>
+                    <li><a href="#">ДИСКЛЕЙМЕР</a></li>
+                    <li><a href="#">КОНТАТЫ</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
 </body>
 </html>
