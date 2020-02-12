@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<div th:fragment="header">
+    <style>
+    header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    }
+    .main-nav{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    }
+    .main-nav li a{
+    color: black;
+    display: block;
+    padding: 20px;
+    }
+    .logo-header img{
+    max-width: 90px;
+    opacity: 1;
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+    </style>
+    <header>
+        <div class="logo-header">
+            <img src="https://static.tildacdn.com/tild6665-3239-4464-a563-313533376238/noroot.png">
+        </div>
+        <nav>
+            <ul class="main-nav">
+                <li><a href="#">ГЛАВНАЯ</a></li>
+                <li><a href="#">ПИТАНИЕ</a></li>
+                <li><a href="#">ПРОГРАММЫ ТРЕНИРОВОК</a></li>
+                <li><a href="#">УСЛУГИ</a></li>
+                <li><a href="#">ОБ АВТОРЕ</a></li>
+                <li><a href="#">ДИСКЛЕЙМЕР</a></li>
+                <li><a href="#">КОНТАКТЫ</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+<div th:fragment="footer">
+    <style>
+        footer {
+            background: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .text-footer {
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .logo-footer img{
+            max-width: 120px;
+            opacity: 1;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        .fa{
+            padding: 10px;
+            font-size: 30px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+        }
+        .fa-instagram {
+            background: white;
+            color: black;
+        }
+        .fa-telegram {
+            background: white;
+            color: black;
+        }
+        .icons-footer{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    </style>
+    <footer>
+        <div class="logo-footer">
+            <img src="https://static.tildacdn.com/tild6439-6136-4663-b137-613835313734/noroot.png">
+        </div>
+        <div class="text-footer">© Все права защищены.</div>
+        <div class="icons-footer">
+            <a href="https://www.instagram.com/realalsou/" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-telegram"></a>
+        </div>
+    </footer>
+</div>
