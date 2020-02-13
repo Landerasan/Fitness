@@ -23,7 +23,11 @@ public class GreetingController {
         return "main";
     }
 
-    @PostMapping
+    @GetMapping("/nutrition")
+    public String nutrition(Model model) {
+        return "nutrition";
+    }
+        @PostMapping
     public String add(@RequestParam String label, Model model){
         if(label != "")
         {
@@ -69,6 +73,6 @@ public class GreetingController {
             mailSender.send(label,"Тема","Текст","/home/landerasan/1.pdf");
         }
         return "verification";
-    }
+        }
 
-}
+    }
