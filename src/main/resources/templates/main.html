@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-</head>
 <div th:include="components/parts :: header"></div>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        /*box-sizing: border-box;*/
+    }
+</style>
 <body>
-<div style="padding-left:16px">
-    <h2>Responsive Topnav Example</h2>
-</div>
-<p>Resize the browser window to see how it works.</p>
+<br>
 <form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
     <input type="hidden" name="receiver" value="410013093652521">
     <input th:type="text" name="label" placeholder="Введите ваш Email">
@@ -21,6 +25,7 @@
     <input type="hidden" name="successURL" value="http://localhost:8080/success">
     <input type="submit" value="Оплатить">
 </form>
+<br>
 </body>
 <div th:include="components/parts :: footer"></div>
 </html>
