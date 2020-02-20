@@ -1,31 +1,120 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Тестовая версия сайта</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <script>
+        const CART = {
+            KEY: 'cnfcbrcnfcbrcnfcbr',
+            contents: [],
+            init() {
+                //check localStorage and initialize the contents of CART.contents
+                let _contents = localStorage.getItem(CART.KEY);
+                if (_contents) {
+                    CART.contents = JSON.parse(_contents);
+                } else {
+                    //dummy test data
+                    CART.contents = [];
+                    CART.sync();
+                }
+            },
+            async sync(){
+                let _cart = JSON.stringify(CART.contents);
+                await localStorage.setItem(CART.KEY, _cart)
+            },
+            find(id){
+                let match = CART.contents.filter(item=> {
+                    if(item.id == id)
+                        return true;
+                });
+                if(match && match[0])
+                    return match[0];
+            },
+            add(id){
+                if (!CART.find(id)) {
+                    let arr = PRODUCTS.filter(product => {
+                        if (product.id == id) {
+                            return true;
+                        }
+                    });
+                    if (arr && arr[0]) {
+                        let obj = {
+                            id: arr[0].id,
+                            title: arr[0].title,
+                            qty: 1,
+                            price: arr[0].price
+                        };
+                        CART.contents.push(obj);
+                        CART.sync();
+                    } else {
+                        console.error('Нет такого')
+                    }
+                }
+            },
+            remove(id){
+                CART.contents = CART.contents.filter(item=>{
+                    if(item.id !== id)
+                        return true;
+                });
+                CART.sync()
+            },
+            empty(){
+                CART.contents = [];
+                CART.sync()
+            }
+        }
+
+        let PRODUCTS = [];
+
+        function start() {
+            let str = "[" + '{"id":1, "price":300, "title":"a"},' + '{"id":2, "price":300, "title":"s"}' + "]";
+            PRODUCTS = JSON.parse(str);
+            CART.init();
+        }
+    </script>
 </head>
-<div th:include="components/parts :: header"></div>
-<style>
-    * {
-        padding: 0;
-        margin: 0;
-        text-decoration: none;
-        /*box-sizing: border-box;*/
-    }
-</style>
 <body>
-<br>
-<form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
-    <input type="hidden" name="receiver" value="410013093652521">
-    <input th:type="text" name="label" placeholder="Введите ваш Email">
-    <input type="hidden" name="quickpay-form" value="shop">
-    <input type="hidden" name="targets" value="${label}">
-    <input type="hidden" name="sum" value="2" data-type="number">
-    <input type="hidden" name="successURL" value="http://localhost:8080/success">
-    <input type="submit" value="Оплатить">
-</form>
-<br>
+<header>
+</header>
+<main>
+</main>
 </body>
-<div th:include="components/parts :: footer"></div>
 </html>
+<!--<!DOCTYPE HTML>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>Тестовая версия сайта</title>-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<!--</head>-->
+<!--<div th:include="components/parts :: header"></div>-->
+<!--<style>-->
+<!--    * {-->
+<!--        padding: 0;-->
+<!--        margin: 0;-->
+<!--        text-decoration: none;-->
+<!--        /*box-sizing: border-box;*/-->
+<!--    }-->
+<!--</style>-->
+<!--<body>-->
+<!--<br>-->
+<!--<form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">-->
+<!--    <input type="hidden" name="receiver" value="410013093652521">-->
+<!--    <input th:type="text" name="label" placeholder="Введите ваш Email">-->
+<!--    <input type="hidden" name="quickpay-form" value="shop">-->
+<!--    <input type="hidden" name="targets" value="${label}">-->
+<!--    <input type="hidden" name="sum" value="2" data-type="number">-->
+<!--    <input type="hidden" name="successURL" value="http://localhost:8080/success">-->
+<!--    <input type="submit" value="Оплатить">-->
+<!--</form>-->
+<!--<br>-->
+<!--</body>-->
+<!--&lt;!&ndash;<div th:include="components/parts :: footer"></div>&ndash;&gt;-->
+<!--</html>-->

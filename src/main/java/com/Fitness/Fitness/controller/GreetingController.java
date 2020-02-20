@@ -2,16 +2,14 @@ package com.Fitness.Fitness.controller;
 
 import com.Fitness.Fitness.service.MailSender;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+
 
 @Controller
 public class GreetingController {
@@ -20,14 +18,15 @@ public class GreetingController {
 
     @GetMapping
     public String main(Model model) {
-        return "main";
+        return ("main");
     }
 
     @GetMapping("/nutrition")
     public String nutrition(Model model) {
         return "nutrition";
     }
-        @PostMapping
+
+    @PostMapping
     public String add(@RequestParam String label, Model model){
         if(label != "")
         {

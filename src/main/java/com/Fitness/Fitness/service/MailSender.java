@@ -21,7 +21,6 @@ public class MailSender {
     private String username;
 
     public void send(String emailTo, String subject, String messageText, String fileName){
-        SimpleMailMessage mailMessage = new SimpleMailMessage();
         MimeMessage message = mailSender.createMimeMessage();
         try {
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
