@@ -1,31 +1,59 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Тестовая версия сайта</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .kekw {
+            display: flex;
+            background: blue;
+            justify-content: space-around;
+        }
+    </style>
+    <div th:include="components/scripts.html :: cart"></div>
 </head>
-<div th:include="components/parts :: header"></div>
-<style>
-    * {
-        padding: 0;
-        margin: 0;
-        text-decoration: none;
-        /*box-sizing: border-box;*/
-    }
-</style>
 <body>
-<br>
-<form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
-    <input type="hidden" name="receiver" value="410013093652521">
-    <input th:type="text" name="label" placeholder="Введите ваш Email">
-    <input type="hidden" name="quickpay-form" value="shop">
-    <input type="hidden" name="targets" value="${label}">
-    <input type="hidden" name="sum" value="2" data-type="number">
-    <input type="hidden" name="successURL" value="http://localhost:8080/success">
-    <input type="submit" value="Оплатить">
-</form>
-<br>
+<header>
+</header>
+<main>
+    <div class="main"></div>
+</main>
 </body>
-<div th:include="components/parts :: footer"></div>
 </html>
+<!--<!DOCTYPE HTML>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>Тестовая версия сайта</title>-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<!--</head>-->
+<!--<div th:include="components/parts :: header"></div>-->
+<!--<style>-->
+<!--    * {-->
+<!--        padding: 0;-->
+<!--        margin: 0;-->
+<!--        text-decoration: none;-->
+<!--        /*box-sizing: border-box;*/-->
+<!--    }-->
+<!--</style>-->
+<!--<body>-->
+<!--<br>-->
+<!--<form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">-->
+<!--    <input type="hidden" name="receiver" value="410013093652521">-->
+<!--    <input th:type="text" name="label" placeholder="Введите ваш Email">-->
+<!--    <input type="hidden" name="quickpay-form" value="shop">-->
+<!--    <input type="hidden" name="targets" value="${label}">-->
+<!--    <input type="hidden" name="sum" value="2" data-type="number">-->
+<!--    <input type="hidden" name="successURL" value="http://localhost:8080/success">-->
+<!--    <input type="submit" value="Оплатить">-->
+<!--</form>-->
+<!--<br>-->
+<!--</body>-->
+<!--&lt;!&ndash;<div th:include="components/parts :: footer"></div>&ndash;&gt;-->
+<!--</html>-->

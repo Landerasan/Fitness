@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="cart">
+    <script>
+        const CART = {
+            KEY: 'cnfcbrcnfcbrcnfcbr',
+            contents: [],
+            init() {
+                //check localStorage and initialize the contents of CART.contents
+                let _contents = localStorage.getItem(CART.KEY);
+                if (_contents) {
+                    CART.contents = JSON.parse(_contents);
+                } else {
+                    //dummy test data
+                    CART.contents = [];
+                    CART.sync();
+                }
+            },
+            async sync() {
+                let _cart = JSON.stringify(CART.contents);
+                await localStorage.setItem(CART.KEY, _cart)
+            },
+            find(id) {
+                let match = CART.contents.filter(item => {
+                    if (item.id == id)
+                        return true;
+                });
+                if (match && match[0])
+                    return match[0];
+            },
+            add(id) {
+                if (!CART.find(id)) {
+                    let arr = PRODUCTS.filter(product => {
+                        if (product.id == id) {
+                            return true;
+                        }
+                    });
+                    if (arr && arr[0]) {
+                        let obj = {
+                            id: arr[0].id,
+                            title: arr[0].title,
+                            qty: 1,
+                            price: arr[0].price
+                        };
+                        CART.contents.push(obj);
+                        CART.sync();
+                    } else {
+                        console.error('Нет такого')
+                    }
+                }
+            },
+            remove(id) {
+                CART.contents = CART.contents.filter(item => {
+                    if (item.id !== id)
+                        return true;
+                });
+                CART.sync()
+            },
+            empty() {
+                CART.contents = [];
+                CART.sync()
+            }
+        }
+
+        let PRODUCTS = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            start();
+        });
+
+        function start() {
+            let str = "[" + '{"id":1, "price":300, "title":"a"},' + '{"id":2, "price":300, "title":"s"}' + "]";
+            PRODUCTS = JSON.parse(str);
+            CART.init();
+        }
+
+        const putIn = (parentDivName, customDivName, customDivInnerHtml, customDivID="") => {
+            const pDiv = document.getElementsByClassName(parentDivName)
+            if (!pDiv.length) return(console.log(`There is no ${parentDivName}, baby`))
+            const cDiv = createElement('div', customDivName, "", customDivID)
+            cDiv.innerHTML = customDivInnerHtml
+            pDiv[0].appendChild(cDiv)
+        }
+
+        const productsParse = (parentDivName, customDivName, content, customDivID="") =>{
+            if (!content) return null
+            if (Array.isArray(content)){
+                content.forEach(e => {
+                    console.log(e)
+                    let tempdiv = document.createElement('div');
+                    ["title", "price"].forEach(el => {
+                        let tmp = createElement('p', "", e[el])
+                        tempdiv.appendChild(tmp)
+                    });
+                    putIn(parentDivName, customDivName, tempdiv.innerHTML)
+                });
+            }
+        }
+
+        function createElement(tag, className, textcontent="" ,id="") {
+            let element = document.createElement(tag)
+            element.className = className
+            if (textcontent.length != 0){element.textContent = textcontent}
+            if (id.length != 0){element.id = id}
+            return element
+        }
+    </script>
+</div>
