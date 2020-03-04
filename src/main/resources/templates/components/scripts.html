@@ -105,5 +105,35 @@
             if (id.length != 0){element.id = id}
             return element
         }
+
+
+        //созидаю товар
+        function add_to_cart(pepa) {
+            const tovar_div = createElement("div", "tovar")
+            const tovar_img = createElement("img", "penis")
+            const tovar_a = createElement("a", "tovar_link", pepa.title)
+            let tovar_qnt_div = createElement("div", "quanty")
+            let tovar_qnt_btnmns = createElement("button", "minus_button", "-", "minus_button")
+            let tovar_qnt_input = createElement("input", "input_qnt", "", "qnt")
+            tovar_qnt_input.disabled = true
+            tovar_qnt_input.value = 10
+            let tovar_qnt_btnplx = createElement("button", "plux_button", "+", "plux_button")
+            let tovar_price = createElement("a", "price", pepa.price)
+
+            tovar_div.appendChild(tovar_a)
+            tovar_div.appendChild(tovar_img)
+            tovar_qnt_div.appendChild(tovar_qnt_btnmns)
+            tovar_qnt_div.appendChild(tovar_qnt_input)
+            tovar_qnt_div.appendChild(tovar_qnt_btnplx)
+            tovar_div.appendChild(tovar_qnt_div)
+            tovar_div.appendChild(tovar_price)
+
+
+
+            putIn("checkout", "tovar", tovar_div.innerHTML)
+
+        }
+
+
     </script>
 </div>
