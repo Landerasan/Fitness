@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="280b5a1a-f17e-43e0-a3f5-f2f6b8a6192d" name="Default Changelist" comment="Обновил хедер, добавил 1 страницу">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/logo-black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/logo-white.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/parts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/components/parts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/scripts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/cart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/nutrition.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/nutrition.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -145,6 +139,7 @@
       <workItem from="1583342550518" duration="4766000" />
       <workItem from="1583646223720" duration="5791000" />
       <workItem from="1583668744299" duration="3942000" />
+      <workItem from="1583673253168" duration="3169000" />
     </task>
     <task id="LOCAL-00001" summary="Добавил футерхедер">
       <created>1581510379063</created>

@@ -11,7 +11,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <script src="scripts/cart.js"></script>
 </head>
 <body>
 <div th:include="components/parts :: header-bootstrap"></div>
@@ -29,22 +28,28 @@
     </div>
     <div class="line">
     </div>
-    <div id="typaidi">
-        <div class="row">
-            <div class="col-1">
-                Тута крестичек
-            </div>
-            <div class="col-3">
-                Мапа айди и картинки (вставить картинку)
-            </div>
-            <div class="col-6">
-                Просто перепись Cart.title
-            </div>
-            <div class="col-2">
-                Cart.price
+    <div class="container-fluid" id="cart__content">
+        <div id="typaidi">
+            <div class="row">
+                <div class="col-1">
+                    Тута крестичек
+                </div>
+                <div class="col-3">
+                    Мапа айди и картинки (вставить картинку)
+                </div>
+                <div class="col-6">
+                    Просто перепись Cart.title
+                </div>
+                <div class="col-2">
+                    Cart.price
+                </div>
             </div>
         </div>
+
     </div>
+
+
+
     <div class="line">
         <div class="row">
             <div class="col-9">
@@ -56,37 +61,6 @@
             </div>
         </div>
     </div>
-
+</div>
+<script src="scripts/cart.js"></script>
 </body>
-</html>
-<!--<!DOCTYPE HTML>-->
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-<!--    <title>Тестовая версия сайта</title>-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
-<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
-<!--</head>-->
-<!--<div th:include="components/parts :: header"></div>-->
-<!--<style>-->
-<!--    * {-->
-<!--        padding: 0;-->
-<!--        margin: 0;-->
-<!--        text-decoration: none;-->
-<!--        /*box-sizing: border-box;*/-->
-<!--    }-->
-<!--</style>-->
-<!--<body>-->
-<!--<br>-->
-<!--<form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">-->
-<!--    <input type="hidden" name="receiver" value="410013093652521">-->
-<!--    <input th:type="text" name="label" placeholder="Введите ваш Email">-->
-<!--    <input type="hidden" name="quickpay-form" value="shop">-->
-<!--    <input type="hidden" name="targets" value="${label}">-->
-<!--    <input type="hidden" name="sum" value="2" data-type="number">-->
-<!--    <input type="hidden" name="successURL" value="http://localhost:8080/success">-->
-<!--    <input type="submit" value="Оплатить">-->
-<!--</form>-->
-<!--<br>-->
-<!--</body>-->
-<!--&lt;!&ndash;<div th:include="components/parts :: footer"></div>&ndash;&gt;-->
-<!--</html>-->
