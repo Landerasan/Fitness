@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="280b5a1a-f17e-43e0-a3f5-f2f6b8a6192d" name="Default Changelist" comment="Обновил хедер, добавил 1 страницу">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/poster-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/poster-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/poster-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/poster1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Fitness/Fitness/controller/GreetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Fitness/Fitness/controller/GreetingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/parts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/components/parts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/nutrition.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/nutrition.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Fitness/Fitness/controller/GreetingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Fitness/Fitness/controller/GreetingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/scripts/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scripts/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/parts.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/components/parts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/nutrition.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/nutrition.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +43,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -83,6 +92,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kena\IdeaProjects\Fitness\src\main\resources\templates" />
       <recent name="C:\Users\Kena\IdeaProjects\Fitness\src\main\resources\static\img" />
     </key>
   </component>
@@ -140,6 +150,7 @@
       <workItem from="1583646223720" duration="5791000" />
       <workItem from="1583668744299" duration="3942000" />
       <workItem from="1583673253168" duration="3169000" />
+      <workItem from="1583676554033" duration="8358000" />
     </task>
     <task id="LOCAL-00001" summary="Добавил футерхедер">
       <created>1581510379063</created>
@@ -230,16 +241,11 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/Fitness/Fitness/controller/GreetingController.java</url>
-          <line>29</line>
+          <line>34</line>
           <properties class="com.Fitness.Fitness.controller.GreetingController" method="add">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/main/resources/templates/nutrition.html</url>
-          <line>6</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

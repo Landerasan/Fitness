@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+</head>
+<style>
+    .small-gray-text{
+        color: #858585;
+        font-size: small;
+        font-style: italic;
+    }
+    .big-bold-text{
+        font-size: medium;
+        font-weight: bold;
+    }
+    .button {
+        background-color: #333333; /* Green */
+        border: none;
+        color: white;
+        padding: 20px 40px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: large;
+        font-weight: bold;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+</style>
+<body>
+<div th:include="components/parts :: header-bootstrap"></div>
+<div class="container-fluid" style="padding: 2vh 0">
+    <div class="row justify-content-center">
+        <div class="col-xs-12 col-md-4">
+            <img src="img/poster-1.jpg" class="img-fluid">
+        </div>
+        <div class="col-xs-12 col-md-4 text-wrapper">
+        <span class="big-bold-text">«НЕ ДИЕТА. Как похудеть, набрать, поддерживать вес по науке, без заблуждений»</span>
+            <span class="small-gray-text">Мини-руководство по питанию для достижения ваших фитнес-целей</span>
+            <br>
+            <br>
+            <span class="big-bold-text">1990р.</span>
+            <br>
+            <br>
+            <span>Не ПП, не диета, не авторская методика.
+То, что наука знает сегодня о питании и управлении весом. Никакой шелухи, только самое важное доступным языком</span>
+            <br>
+            <br>
+                Ключевое:
+                <br>
+−калории − это не миф, а хороший инструмент для управления весом;
+                <br>
+−"правильное" питание (ПП) может обернуться неправильными последствиями: пищевые срывы, расстройства пищевого поведения, набор веса и др.;
+                <br>
+−гибкость и комфорт в питании − ключевое для достижения и сохранения результата;
+                <br>
+−освободиться от заблуждений в питании значит сэкономить нервы, время и деньги.
+            <br>
+            <br>
+            Вы узнаете:
+            <br>
+            −что реально работает для коррекции веса;
+            <br>
+            −конкретно вашу суточную норму калорий, белков, жиров и углеводов для разных целей;
+            <br>
+            −как вести пищевой дневник в мобильном приложении для лучшего контроля рациона (это поможет двигаться к цели быстрее);
+            <br>
+            −какие добавки могут оказаться для вас полезными, а какие − пустая трата денег;
+            <br>
+            −о самых распространенных мифах и научитесь отделять котлеты от мух в теме питания.
+            <br>
+            <br>
+            <span class="small-gray-text">Документ в PDF-формате. Для чтения используйте компьютер или смартфон.</span>
+            <br>
+            <button style="float: right; border-radius: 30%" class="button" type="button" onclick="CART.add(1)">Купить</button>
+        </div>
+    </div>
+</div>
+</body>

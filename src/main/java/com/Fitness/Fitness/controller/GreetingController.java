@@ -26,6 +26,11 @@ public class GreetingController {
         return "nutrition";
     }
 
+    @GetMapping("/poster1")
+    public String poster1(Model model) {
+        return "poster1";
+    }
+
     @PostMapping
     public String add(@RequestParam String label, Model model){
         if(label != "")

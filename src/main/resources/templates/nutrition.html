@@ -1,51 +1,56 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Тестовая версия сайта</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="scripts/cart.js"></script>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 <style>
-    * {
-        padding: 0;
-        margin: 0;
-        text-decoration: none;
-        /*box-sizing: border-box;*/
+    .poster-container{
+        padding: 2em;
     }
-
-    body {
-        font-family: Arial;
-        margin: 0;
+    .poster-container div{
+        margin: 1em;
     }
-
-    img {
-        vertical-align: middle;
+    .program-poster h1{
+        text-align: center;
+        font-size: medium;
     }
-
+    .program-poster h2{
+        text-align: center;
+        color: gray;
+        font-weight: normal;
+        font-size: small;
+    }
 </style>
-</head>
-<!--<div th:include="components/parts :: header"></div>-->
 <body>
-<div class="diet-block">
-    <div class="container">
-        <div class="mySlides">
-            <img src="https://static.tildacdn.com/tild6534-3563-4933-b066-626139633262/photo.jpg" style="width:100%">
+<div th:include="components/parts :: header-bootstrap"></div>
+<div class="container-fluid">
+    <div class="row poster-container justify-content-center">
+        <div class="col-xs-12 col-md-5 program-poster">
+            <a href="/poster1">
+            <img src="img/poster-1.jpg" class="img-fluid">
+            </a>
+            <h1>Программа 1</h1>
+            <h2>100руб</h2>
         </div>
-        <div class="mySlides">
-            <img src="https://static.tildacdn.com/tild3237-3035-4237-a530-643265373737/_.png" style="width:100%">
+        <div class="col-xs-12 col-md-5 program-poster">
+            <img src="img/poster-2.jpg" class="img-fluid">
+            <h1>Программа 2</h1>
+            <h2>200руб</h2>
         </div>
-    </div>
-    <div class="diet-info">
-        <p style="font-weight: bold; font-size: 20px">«НЕ ДИЕТА. Как похудеть, набрать, поддерживать вес
-            по науке, без заблуждений»</p>
-        <p style="color: gray; font-size: 10px">Мини-руководство по питанию для достижения ваших фитнес-целей</p>
-        <br>
-        <p style="">1990р.</p>
-        <br>
+        <div class="col-xs-12 col-md-5 program-poster">
+            <img src="img/poster-3.jpg" class="img-fluid">
+            <h1>Программа 3</h1>
+            <h2>300руб</h2>
+        </div>
     </div>
 </div>
-
 </body>
-<!--<div th:include="components/parts :: footer"></div>-->
-</html>
