@@ -96,12 +96,15 @@ function fill_cart(cart) {
 
 function start() {
     // let str = "[" + '{"id":1, "title":"a", "price":300},' + '{"id":2,  "title":"s", "price":300}' + "]";
-    let str = "[" + '{"id":0, "title":"hurrdurr", "price":10000},' + '{"id":1, "title":"hehexd", "price":10000},' + '{"id":2, "title":"ayyy", "price":10000},' + '{"id":3, "title":"lemavo", "price":10000}' + "]";
+    let str = '[{"id":0, "title":"hurrdurr", "price":10000},{"id":1, "title":"hehexd", "price":10000},{"id":2, "title":"ayyy", "price":10000},{"id":3, "title":"lemavo", "price":10000}]';
     // CART.contents = [{"id":0, "title":"hurrdurr", "price":10000}, {"id":1, "title":"hehexd", "price":10000}, {"id":2, "title":"ayyy", "price":10000}, {"id":3, "title":"lemavo", "price":10000}];
     // console.log(CART.contents);
     PRODUCTS = JSON.parse(str);
     // PRODUCTS = [{"id":0, "title":"hurrdurr", "price":10000}, {"id":1, "title":"hehexd", "price":10000}, {"id":2, "title":"ayyy", "price":10000}, {"id":3, "title":"lemavo", "price":10000}];
     CART.init();
-    set_summ_of_cart();
-    fill_cart(CART);
+
+    if (window.location.pathname === '/'){
+        set_summ_of_cart();
+        fill_cart(CART);
+    }
 }
