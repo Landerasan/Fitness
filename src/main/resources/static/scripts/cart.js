@@ -65,6 +65,35 @@ document.addEventListener('DOMContentLoaded', () => {
     start();
 });
 
+function remove_from_cart(item, in_cart_id) {
+    // let to_kill = document.getElementById(item.id);
+    CART.remove(in_cart_id);
+    // to_kill.remove();
+    start();
+}
+
+function set_summ_of_cart() {
+    let total_price = document.getElementById("summ_of_cart");
+    let ttl = 0;
+    CART.contents.forEach((item)=>{
+        ttl+=item.price;
+    });
+    total_price.innerText = `${ttl} руб.`;
+
+}
+
+function fill_cart(cart) {
+    let cart_content = document.getElementById("cart__content");
+    cart_content.innerHTML = "";
+    cart.contents.forEach((item, i) => {
+        let inner = document.createElement("div");
+        inner.id = `cart_item_${i}`;
+        inner.innerHTML = `<div class="row"><div class="col-1"><span style="cursor: pointer" onclick=remove_from_cart(${inner.id},${item.id})>X</span></div><div class="col-3">Мапа айди и картинки (вставить картинку)</div><div class="col-6">${item.title}</div><div class="col-2">${item.price}</div></div>`;
+        cart_content.appendChild(inner)
+        set_summ_of_cart()
+    });
+}
+
 function start() {
     // let str = "[" + '{"id":1, "title":"a", "price":300},' + '{"id":2,  "title":"s", "price":300}' + "]";
     let str = "[" + '{"id":0, "title":"hurrdurr", "price":10000},' + '{"id":1, "title":"hehexd", "price":10000},' + '{"id":2, "title":"ayyy", "price":10000},' + '{"id":3, "title":"lemavo", "price":10000}' + "]";
@@ -73,100 +102,6 @@ function start() {
     PRODUCTS = JSON.parse(str);
     // PRODUCTS = [{"id":0, "title":"hurrdurr", "price":10000}, {"id":1, "title":"hehexd", "price":10000}, {"id":2, "title":"ayyy", "price":10000}, {"id":3, "title":"lemavo", "price":10000}];
     CART.init();
+    set_summ_of_cart();
     fill_cart(CART);
 }
-
-function fill_cart(cart) {
-    let cart_content = document.getElementById("cart__content");
-    console.log(cart);
-    console.log(cart_content);
-    cart_content.innerHTML = "";
-    cart.contents.forEach(i => {
-        let inner = document.createElement("div");
-        inner.id = `cart_item_${i}`;
-        inner.innerHTML = `<div class="row"><div class="col-1"><span onclick=remove_from_cart(${inner.id})></span></div><div class="col-3">Мапа айди и картинки (вставить картинку)</div><div class="col-6">${i.title}</div><div class="col-2">${i.price}</div></div>`;
-
-        cart_content.appendChild(inner)
-    });
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const putIn = (parentDivName, customDivName, customDivInnerHtml, customDivID="") => {
-//     const pDiv = document.getElementsByClassName(parentDivName)
-//     if (!pDiv.length) return(console.log(`There is no ${parentDivName}, baby`))
-//     const cDiv = createElement('div', customDivName, "", customDivID)
-//     cDiv.innerHTML = customDivInnerHtml
-//     pDiv[0].appendChild(cDiv)
-// }
-
-// const productsParse = (parentDivName, customDivName, content, customDivID="") =>{
-//     if (!content) return null
-//     if (Array.isArray(content)){
-//         content.forEach(e => {
-//             console.log(e)
-//             let tempdiv = document.createElement('div');
-//             ["title", "price"].forEach(el => {
-//                 let tmp = createElement('p', "", e[el])
-//                 tempdiv.appendChild(tmp)
-//             });
-//             putIn(parentDivName, customDivName, tempdiv.innerHTML)
-//         });
-//     }
-// }
-
-// function createElement(tag, className, textcontent="" ,id="") {
-//     let element = document.createElement(tag)
-//     element.className = className
-//     if (textcontent.length != 0){element.textContent = textcontent}
-//     if (id.length != 0){element.id = id}
-//     return element
-// }
-
-
-//созидаю товар
-// function add_to_cart(pepa) {
-//     const tovar_div = createElement("div", "tovar")
-//     const tovar_img = createElement("img", "penis")
-//     const tovar_a = createElement("a", "tovar_link", pepa.title)
-//     let tovar_qnt_div = createElement("div", "quanty")
-//     let tovar_qnt_btnmns = createElement("button", "minus_button", "-", "minus_button")
-//     let tovar_qnt_input = createElement("input", "input_qnt", "", "qnt")
-//     tovar_qnt_input.disabled = true
-//     tovar_qnt_input.value = 10
-//     let tovar_qnt_btnplx = createElement("button", "plux_button", "+", "plux_button")
-//     let tovar_price = createElement("a", "price", pepa.price)
-//
-//     tovar_div.appendChild(tovar_a)
-//     tovar_div.appendChild(tovar_img)
-//     tovar_qnt_div.appendChild(tovar_qnt_btnmns)
-//     tovar_qnt_div.appendChild(tovar_qnt_input)
-//     tovar_qnt_div.appendChild(tovar_qnt_btnplx)
-//     tovar_div.appendChild(tovar_qnt_div)
-//     tovar_div.appendChild(tovar_price)
-//
-//
-//
-//     putIn("checkout", "tovar", tovar_div.innerHTML)
-//
-// }
