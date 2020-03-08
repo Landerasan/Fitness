@@ -6,30 +6,58 @@
     <title>Shopping Cart</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <div th:include="components/scripts.html :: cart"></div>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="scripts/cart.js"></script>
 </head>
 <body>
-<header th:include="components/parts :: header"></header>
-<main>
+<div th:include="components/parts :: header-bootstrap"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-1">
+            Вещь
+        </div>
+        <div class="col-9">
+            Картинка + текст
+        </div>
+        <div class="col-2">
+            Цена
+        </div>
+    </div>
+    <div class="line">
+    </div>
+    <div id="typaidi">
+        <div class="row">
+            <div class="col-1">
+                Тута крестичек
+            </div>
+            <div class="col-3">
+                Мапа айди и картинки (вставить картинку)
+            </div>
+            <div class="col-6">
+                Просто перепись Cart.title
+            </div>
+            <div class="col-2">
+                Cart.price
+            </div>
+        </div>
+    </div>
+    <div class="line">
+        <div class="row">
+            <div class="col-9">
+            </div>
+            <div class="col-1">
+                Сумма: + Cart.price(Все)
+            </div>
+            <div class="col-2">
+            </div>
+        </div>
+    </div>
 
-</main>
-<script src="scripts/test.js"></script>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>
 <!--<!DOCTYPE HTML>-->
 <!--<html xmlns:th="http://www.thymeleaf.org">-->
