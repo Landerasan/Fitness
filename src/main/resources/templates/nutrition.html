@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Shopping Cart</title>
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -35,7 +35,7 @@
 <div class="container-fluid">
     <div class="row poster-container justify-content-center">
         <div class="col-xs-12 col-md-5 program-poster">
-            <a href="/poster1">
+            <a href="nutrition/poster1">
             <img src="img/poster-1.jpg" class="img-fluid">
             </a>
             <h1>Программа 1</h1>
@@ -53,4 +53,5 @@
         </div>
     </div>
 </div>
+<script th:src="@{/scripts/cart.js}"></script>
 </body>

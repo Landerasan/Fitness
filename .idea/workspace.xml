@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="280b5a1a-f17e-43e0-a3f5-f2f6b8a6192d" name="Default Changelist" comment="Обновил хедер, добавил 1 страницу">
+    <list default="true" id="280b5a1a-f17e-43e0-a3f5-f2f6b8a6192d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Fitness/Fitness/controller/GreetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Fitness/Fitness/controller/GreetingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/parts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/components/parts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/nutrition.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/nutrition.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/poster1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/poster1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Fitness/Fitness/controller/GreetingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Fitness/Fitness/controller/GreetingController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/scripts/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scripts/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/parts.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/components/parts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/nutrition.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/nutrition.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/poster1.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/poster1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,6 +88,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.34712642" />
@@ -85,6 +99,11 @@
       <recent name="C:\Users\Kena\IdeaProjects\Fitness\src\main\resources\templates" />
       <recent name="C:\Users\Kena\IdeaProjects\Fitness\src\main\resources\static\img" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -141,6 +160,8 @@
       <workItem from="1583668744299" duration="3942000" />
       <workItem from="1583673253168" duration="3169000" />
       <workItem from="1583676554033" duration="8358000" />
+      <workItem from="1583735773114" duration="5508000" />
+      <workItem from="1583748653809" duration="1100000" />
     </task>
     <task id="LOCAL-00001" summary="Добавил футерхедер">
       <created>1581510379063</created>
