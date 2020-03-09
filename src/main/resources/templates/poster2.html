@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+</head>
+<style>
+    .small-gray-text{
+        color: #858585;
+        font-size: small;
+        font-style: italic;
+    }
+    .big-bold-text{
+        font-size: medium;
+        font-weight: bold;
+    }
+    .button {
+        background-color: #333333; /* Green */
+        border: none;
+        color: white;
+        padding: 20px 40px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: large;
+        font-weight: bold;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+</style>
+<body>
+<div th:include="components/parts :: header-bootstrap"></div>
+<div class="container-fluid" style="padding: 2vh 0">
+    <div class="row justify-content-center">
+        <div class="col-xs-12 col-md-4">
+            <img th:src="@{/img/poster-4.jpg}" class="img-fluid">
+        </div>
+        <div class="col-xs-12 col-md-4 text-wrapper">
+            <span class="big-bold-text">ЯГОДИЦЫ • FULLBODY</span>
+            <span class="small-gray-text">Программа силовых тренировок на все тело (full body) с акцентом на ягодичные мышцы для среднего и высокого уровней тренированности</span>
+            <br>
+            <br>
+            <span class="big-bold-text">1590р.</span>
+            <br>
+            <br>
+            Это не просто программа с упражнениями, подходами и повторениями. Это полноценное руководство по силовым тренировкам. В документе есть теоретическая часть, сама программа с письменными подсказками по технике, ссылки на видео техники упражнений, ответы на часто задаваемые вопросы.
+            <br>
+            <br>
+            Создана на основе статей американского фитнес-эксперта, доктора спортивных наук Брэта Контрераса (Bret Contreras, PhD), который специализируется на исследовании наиболее оптимальных методов развития ягодичных мышц. На его работы ссылается множество других экспертов, и его методы успешно реализуются на практике.
+            <br>
+            <br>
+            Вам нужна эта программа, если вы:
+            <br>
+            −хотите сильные и эстетичные ягодицы (необязательно большие − "подтянутые", атлетичные);
+            <br>
+            −худеете, но не хотите, чтобы в результате ваше тело (особенно ягодицы) стало "дряблым";
+            <br>
+            −набираете мышечную массу и хотите акцентированно проработать ягодицы, тренируя при этом и остальные мышцы;
+            <br>
+            −не видите результатов от своих тренировок и хотите попробовать что-то новое;
+            <br>
+            −просто хотите поддерживать хорошую физическую форму.
+            <br>
+            <br>
+            Вы познакомитесь с:
+            <br>
+            −упражнениями из арсенала Брэта Контрераса и поймете, что ягодицы развиваются не только благодаря приседаниям;
+            <br>
+            −анатомией и функциями ягодичных мышц для большей осознанности в тренировках;
+            <br>
+            −важными для тренировок понятиями "интенсивность", "объем", "частота" и "периодизация" нагрузки и научитесь подстраивать их под себя при необходимости;
+            <br>
+            −вариантами замены упражнений, напрямую задействующих колени, или способами облегчения нагрузки в них при наличии проблем с коленными суставами (при подтверждении вашим лечащим врачом о безопасности занятий)
+            <br>
+            <br>
+            <span class="small-gray-text">Документ в PDF-формате. Для чтения используйте компьютер или смартфон.</span>
+            <br>
+            <button style="float: right; border-radius: 30%" class="button" type="button" onclick="CART.add(2)">Купить</button>
+        </div>
+    </div>
+</div>
+<script th:src="@{/scripts/cart.js}"></script>
+</body>

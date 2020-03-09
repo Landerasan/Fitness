@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="280b5a1a-f17e-43e0-a3f5-f2f6b8a6192d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/poster-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/poster2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Fitness/Fitness/controller/GreetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Fitness/Fitness/controller/GreetingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/parts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/components/parts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/nutrition.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/nutrition.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/poster1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/poster1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Fitness/Fitness/controller/GreetingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Fitness/Fitness/controller/GreetingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/scripts/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scripts/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/parts.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/components/parts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/nutrition.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/nutrition.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/poster1.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/poster1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +154,7 @@
       <workItem from="1583673253168" duration="3169000" />
       <workItem from="1583676554033" duration="8358000" />
       <workItem from="1583735773114" duration="5508000" />
-      <workItem from="1583748653809" duration="1100000" />
+      <workItem from="1583748653809" duration="2456000" />
     </task>
     <task id="LOCAL-00001" summary="Добавил футерхедер">
       <created>1581510379063</created>
@@ -212,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582198559313</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Добавил CART">
+      <created>1583749764074</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1583749764074</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">

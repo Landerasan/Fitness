@@ -96,7 +96,9 @@ function fill_cart(cart) {
 
 function start() {
     // let str = "[" + '{"id":1, "title":"a", "price":300},' + '{"id":2,  "title":"s", "price":300}' + "]";
-    let str = '[{"id":0, "title":"hurrdurr", "price":10000},{"id":1, "title":"НЕ ДИЕТА. Мини-руководство по питанию для достижения ваших фитнес-целей", "price":1900},{"id":2, "title":"ayyy", "price":10000},{"id":3, "title":"lemavo", "price":10000}]';
+    let str = '[{"id":1, "title":"НЕ ДИЕТА. Мини-руководство по питанию для достижения ваших фитнес-целей", ' +
+        '"price":1900},{"id":2, "title":"ЯГОДИЦЫ • FULLBODY. Программа силовых тренировок на все тело (full body) с акцентом на ягодичные мышцы для среднего и высокого уровней тренированности", "price":1590},' +
+        '{"id":3, "title":"lemavo", "price":10000}]';
     // CART.contents = [{"id":0, "title":"hurrdurr", "price":10000}, {"id":1, "title":"hehexd", "price":10000}, {"id":2, "title":"ayyy", "price":10000}, {"id":3, "title":"lemavo", "price":10000}];
     // console.log(CART.contents);
     PRODUCTS = JSON.parse(str);

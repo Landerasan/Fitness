@@ -21,9 +21,9 @@ public class GreetingController {
         return ("main");
     }
 
-    @GetMapping("/nutrition")
-    public String nutrition(Model model) {
-        return "nutrition";
+    @GetMapping("/{page}")
+    public String nutrition(@PathVariable String page, Model model) {
+        return page;
     }
 
     @GetMapping("/nutrition/{poster}")
