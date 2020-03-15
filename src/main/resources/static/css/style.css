@@ -3,12 +3,6 @@
     margin: 0;
 }
 
-.kekw {
-    display: flex;
-    background: blue;
-    justify-content: space-around;
-}
-
 .checkout {
     display: flex;
     width: 800px;
@@ -42,7 +36,6 @@
     background-color: green;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .price {
@@ -51,7 +44,7 @@
 }
 
 .navbar-brand img {
-    height: 4vh;
+    height: 5vh;
 }
 
 .navbar-nav li {

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+</head>
+<style>
+    *{
+        font-family: 'Rubik', sans-serif;
+    }
+    .poster-container{
+        padding: 2em;
+    }
+    .poster-container div{
+        margin: 1em;
+    }
+    .program-poster{
+        height:100%;
+        width:100%;
+        overflow:hidden;
+    }
+    .program-poster h1{
+        margin-top: 0.8em;
+        text-align: center;
+        font-size: 24px;
+    }
+    .program-poster h2{
+        text-align: center;
+        color: gray;
+        font-weight: normal;
+        font-size: 20px;
+    }
+</style>
+<body>
+<div th:include="components/parts :: header-bootstrap"></div>
+<div class="container-fluid">
+    <div class="row poster-container justify-content-center">
+        <div class="col-xs-12 col-md-5 program-poster">
+            <a href="programs/poster2">
+                <img th:src="@{/img/greyposter.jpeg}" class="img-fluid d-block">
+            </a>
+            <h1>ЯГОДИЦЫ FULL BODY</h1>
+            <h2>1990₽</h2>
+    </div>
+</div>
+<script th:src="@{/scripts/cart.js}"></script>
+</body>

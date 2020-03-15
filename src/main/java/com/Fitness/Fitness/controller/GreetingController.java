@@ -26,7 +26,7 @@ public class GreetingController {
         return page;
     }
 
-    @GetMapping("/nutrition/{poster}")
+    @GetMapping("/programs/{poster}")
     public String poster1(@PathVariable String poster,  Model model) {
         return poster;
     }

@@ -7,83 +7,155 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,500,700|Raleway:400,500,700|Rubik:400,500,700&display=swap&subset=cyrillic"
+          rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 <style>
-    .small-gray-text{
+    * {
+        font-family: 'Rubik', sans-serif;
+    }
+
+    .program-poster, .page-header {
+        margin-bottom: 0.8em;
+    }
+
+    .small-gray-text {
         color: #858585;
-        font-size: small;
-        font-style: italic;
+        font-family: 'Inter', sans-serif;
+        font-size: 12px;
+        line-height: 22px;
+        letter-spacing: 0.08em;
     }
-    .big-bold-text{
-        font-size: medium;
-        font-weight: bold;
+
+    .big-bold-text {
+        text-align: center;
+        font-weight: 500;
+        font-family: 'Inter', sans-serif;
+        /*text-transform: uppercase;*/
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.1em;
     }
+
+    .price-text {
+        margin-top: 0.8em;
+    }
+
     .button {
-        background-color: #333333; /* Green */
-        border: none;
-        color: white;
-        padding: 20px 40px;
+        background-color: white; /* Green */
+        border: 2px solid rgba(40, 40, 40, 0.85);
+        padding: 6px 23px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: large;
-        font-weight: bold;
-        margin: 4px 2px;
+        letter-spacing: 0.2em;
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0.8em 2px;
         cursor: pointer;
+        transition: 300ms;
+    }
+
+    .button:hover {
+        background-color: rgb(40, 40, 40);
+    }
+
+    .button:hover div {
+        color: white;
+    }
+
+    .regular-text {
+        font-family: 'Inter', sans-serif;
+        /*text-transform: uppercase;*/
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 0.08em;
+    }
+    @media only screen and (max-width: 768px) {
+        .text-header {
+            display: none;
+        }
+        .page-header{
+            display: flex;
+        }
+    }
+    @media only screen and (min-width: 768px){
+        .page-header{
+            display: none;
+        }
+    }
+    .button div {
+        color: rgba(40, 40, 40, 0.85);
     }
 </style>
 <body>
 <div th:include="components/parts :: header-bootstrap"></div>
-<div class="container-fluid" style="padding: 2vh 0">
+<div class="container-fluid" style="padding: 2vh 4vh">
     <div class="row justify-content-center">
-        <div class="col-xs-12 col-md-4">
-            <img th:src="@{/img/poster-4.jpg}" class="img-fluid">
+        <div class="col-xs-12 page-header">
+            <span class="big-bold-text">ЯГОДИЦЫ • FULLBODY</span>
+        </div>
+        <div class="col-xs-12 col-md-4 program-poster">
+            <img th:src="@{/img/greyposter.jpeg}" class="img-fluid">
         </div>
         <div class="col-xs-12 col-md-4 text-wrapper">
-            <span class="big-bold-text">ЯГОДИЦЫ • FULLBODY</span>
+            <span class="big-bold-text text-header">ЯГОДИЦЫ • FULLBODY</span>
             <span class="small-gray-text">Программа силовых тренировок на все тело (full body) с акцентом на ягодичные мышцы для среднего и высокого уровней тренированности</span>
+            <div class="price-text">1590₽</div>
+            <button class="button" type="button" onclick="CART.add(2)">
+                <div>КУПИТЬ</div>
+            </button>
             <br>
+            <div class="regular-text">Это не просто программа с упражнениями, подходами и повторениями. Это полноценное
+                руководство по силовым тренировкам. В документе есть теоретическая часть, сама программа с письменными
+                подсказками по технике, ссылки на видео техники упражнений, ответы на часто задаваемые вопросы.
+            </div>
             <br>
-            <span class="big-bold-text">1590р.</span>
+            <div class="regular-text">Создана на основе статей американского фитнес-эксперта, доктора спортивных наук
+                Брэта Контрераса (Bret Contreras, PhD), который специализируется на исследовании наиболее оптимальных
+                методов развития ягодичных мышц. На его работы ссылается множество других экспертов, и его методы
+                успешно реализуются на практике.
+            </div>
             <br>
+            <div class="regular-text">Вам нужна эта программа, если вы:</div>
+            <div class="regular-text">■хотите сильные и эстетичные ягодицы (необязательно большие − "подтянутые",
+                атлетичные);
+            </div>
+            <div class="regular-text">■худеете, но не хотите, чтобы в результате ваше тело (особенно ягодицы) стало
+                "дряблым";
+            </div>
+            <div class="regular-text">■набираете мышечную массу и хотите акцентированно проработать ягодицы, тренируя
+                при этом и остальные мышцы;
+            </div>
+            <div class="regular-text">■не видите результатов от своих тренировок и хотите попробовать что-то новое;
+            </div>
+            <div class="regular-text">■просто хотите поддерживать хорошую физическую форму.</div>
             <br>
-            Это не просто программа с упражнениями, подходами и повторениями. Это полноценное руководство по силовым тренировкам. В документе есть теоретическая часть, сама программа с письменными подсказками по технике, ссылки на видео техники упражнений, ответы на часто задаваемые вопросы.
+            <div class="regular-text">Вы познакомитесь с:</div>
+            <div class="regular-text">■упражнениями из арсенала Брэта Контрераса и поймете, что ягодицы развиваются не
+                только благодаря приседаниям;
+            </div>
+            <div class="regular-text">■анатомией и функциями ягодичных мышц для большей осознанности в тренировках;
+            </div>
+            <div class="regular-text">■важными для тренировок понятиями "интенсивность", "объем", "частота" и
+                "периодизация" нагрузки и научитесь подстраивать их под себя при необходимости;
+            </div>
+            <div class="regular-text">■вариантами замены упражнений, напрямую задействующих колени, или способами
+                облегчения нагрузки в них при наличии проблем с коленными суставами (при подтверждении вашим лечащим
+                врачом о безопасности занятий)
+            </div>
             <br>
+            <div class="small-gray-text">Документ в PDF-формате. Для чтения используйте компьютер или смартфон.</div>
             <br>
-            Создана на основе статей американского фитнес-эксперта, доктора спортивных наук Брэта Контрераса (Bret Contreras, PhD), который специализируется на исследовании наиболее оптимальных методов развития ягодичных мышц. На его работы ссылается множество других экспертов, и его методы успешно реализуются на практике.
-            <br>
-            <br>
-            Вам нужна эта программа, если вы:
-            <br>
-            −хотите сильные и эстетичные ягодицы (необязательно большие − "подтянутые", атлетичные);
-            <br>
-            −худеете, но не хотите, чтобы в результате ваше тело (особенно ягодицы) стало "дряблым";
-            <br>
-            −набираете мышечную массу и хотите акцентированно проработать ягодицы, тренируя при этом и остальные мышцы;
-            <br>
-            −не видите результатов от своих тренировок и хотите попробовать что-то новое;
-            <br>
-            −просто хотите поддерживать хорошую физическую форму.
-            <br>
-            <br>
-            Вы познакомитесь с:
-            <br>
-            −упражнениями из арсенала Брэта Контрераса и поймете, что ягодицы развиваются не только благодаря приседаниям;
-            <br>
-            −анатомией и функциями ягодичных мышц для большей осознанности в тренировках;
-            <br>
-            −важными для тренировок понятиями "интенсивность", "объем", "частота" и "периодизация" нагрузки и научитесь подстраивать их под себя при необходимости;
-            <br>
-            −вариантами замены упражнений, напрямую задействующих колени, или способами облегчения нагрузки в них при наличии проблем с коленными суставами (при подтверждении вашим лечащим врачом о безопасности занятий)
-            <br>
-            <br>
-            <span class="small-gray-text">Документ в PDF-формате. Для чтения используйте компьютер или смартфон.</span>
-            <br>
-            <button style="float: right; border-radius: 30%" class="button" type="button" onclick="CART.add(2)">Купить</button>
+            <div style="margin-left: 50%; transform: translateX(-25%);">
+            <button class="button" type="button" onclick="CART.add(2)">
+                <div>КУПИТЬ</div>
+            </button>
+            </div>
         </div>
     </div>
 </div>

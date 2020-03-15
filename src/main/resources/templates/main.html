@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -43,5 +44,24 @@
         </div>
     </div>
 </div>
+<br>
+<button style="float: right;" class="button" type="button">ыфвфыв</button>
+<script>
+    let parent = document.getElementsByClassName("button");
+    Array.prototype.forEach.call(parent, child => {
+        child.addEventListener('click',function (event) {
+            event.target.innerHTML = "КУПИТЬ";
+        })
+    });
+    // object-fit polyfill run
+    objectFitImages();
+
+    /* init Jarallax */
+    jarallax(document.querySelectorAll('.jarallax'));
+
+    jarallax(document.querySelectorAll('.jarallax-keep-img'), {
+        keepImg: true,
+    });
+</script>
 <script th:src="@{/scripts/cart.js}"></script>
 </body>

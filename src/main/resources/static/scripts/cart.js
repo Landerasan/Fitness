@@ -96,7 +96,12 @@ function fill_cart(cart) {
     cart.contents.forEach((item, i) => {
         let inner = document.createElement("div");
         inner.id = `cart_item_${i}`;
-        inner.innerHTML = `<div class="row"><div class="col-1"><span style="cursor: pointer" onclick=remove_from_cart(${item.id})>X</span></div><div class="col-3"><img class="img-fluid" style="max-height: 8vh" src=${PICMAP.get(item.id)} alt="https://via.placeholder.com/140x100"></div><div class="col-6">${item.title}</div><div class="col-2">${item.price}</div></div>`;
+        inner.innerHTML = `<div class="row">\
+<div class="col-1"><span style="cursor: pointer" onclick=remove_from_cart(${item.id})>X</span></div>\
+<div class="col-3"><img class="img-fluid" style="max-height: 8vh" src=${PICMAP.get(item.id)} alt="https://via.placeholder.com/140x100"></div>\
+<div class="col-6">${item.title}</div>\
+<div class="col-2">${item.price}</div>\
+</div>`;
         cart_content.appendChild(inner);
         set_summ_of_cart()
     });

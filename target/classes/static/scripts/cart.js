@@ -57,26 +57,34 @@ const CART = {
         CART.contents = [];
         CART.sync()
     }
-}
+};
 
 let PRODUCTS = [];
+let PICMAP;
 
 document.addEventListener('DOMContentLoaded', () => {
     start();
 });
 
-function remove_from_cart(item, in_cart_id) {
-    // let to_kill = document.getElementById(item.id);
+function createPicMap() {
+    let data = new Map();
+    data.set(1, 'img/poster-4.jpg');
+    data.set(2, 'img/poster-4.jpg');
+    data.set(3, 'img/poster-4.jpg');
+    return data;
+}
+
+
+function remove_from_cart(in_cart_id) {
     CART.remove(in_cart_id);
-    // to_kill.remove();
     start();
 }
 
 function set_summ_of_cart() {
     let total_price = document.getElementById("summ_of_cart");
     let ttl = 0;
-    CART.contents.forEach((item)=>{
-        ttl+=item.price;
+    CART.contents.forEach((item) => {
+        ttl += item.price;
     });
     total_price.innerText = `${ttl} руб.`;
 
@@ -88,24 +96,39 @@ function fill_cart(cart) {
     cart.contents.forEach((item, i) => {
         let inner = document.createElement("div");
         inner.id = `cart_item_${i}`;
-        inner.innerHTML = `<div class="row"><div class="col-1"><span style="cursor: pointer" onclick=remove_from_cart(${inner.id},${item.id})>X</span></div><div class="col-3">Мапа айди и картинки (вставить картинку)</div><div class="col-6">${item.title}</div><div class="col-2">${item.price}</div></div>`;
-        cart_content.appendChild(inner)
+        inner.innerHTML = `<div class="row">\
+<div class="col-1"><span style="cursor: pointer" onclick=remove_from_cart(${item.id})>X</span></div>\
+<div class="col-3"><img class="img-fluid" style="max-height: 8vh" src=${PICMAP.get(item.id)} alt="https://via.placeholder.com/140x100"></div>\
+<div class="col-6">${item.title}</div>\
+<div class="col-2">${item.price}</div>\
+</div>`;
+        cart_content.appendChild(inner);
         set_summ_of_cart()
     });
 }
 
 function start() {
-    // let str = "[" + '{"id":1, "title":"a", "price":300},' + '{"id":2,  "title":"s", "price":300}' + "]";
-    let str = '[{"id":1, "title":"НЕ ДИЕТА. Мини-руководство по питанию для достижения ваших фитнес-целей", ' +
-        '"price":1900},{"id":2, "title":"ЯГОДИЦЫ • FULLBODY. Программа силовых тренировок на все тело (full body) с акцентом на ягодичные мышцы для среднего и высокого уровней тренированности", "price":1590},' +
-        '{"id":3, "title":"lemavo", "price":10000}]';
-    // CART.contents = [{"id":0, "title":"hurrdurr", "price":10000}, {"id":1, "title":"hehexd", "price":10000}, {"id":2, "title":"ayyy", "price":10000}, {"id":3, "title":"lemavo", "price":10000}];
-    // console.log(CART.contents);
-    PRODUCTS = JSON.parse(str);
-    // PRODUCTS = [{"id":0, "title":"hurrdurr", "price":10000}, {"id":1, "title":"hehexd", "price":10000}, {"id":2, "title":"ayyy", "price":10000}, {"id":3, "title":"lemavo", "price":10000}];
+    PICMAP = createPicMap();
+    PRODUCTS = [
+        {
+            "id": 1,
+            "title": "НЕ ДИЕТА. Мини-руководство по питанию для достижения ваших фитнес-целей",
+            "price": 1900
+        },
+        {
+            "id": 2,
+            "title": "ЯГОДИЦЫ • FULLBODY. Программа силовых тренировок на все тело (full body) с акцентом на ягодичные мышцы для среднего и высокого уровней тренированности",
+            "price": 1590
+        },
+        {
+            "id": 3,
+            "title": "lemavo",
+            "price": 10000
+        }
+    ];
     CART.init();
 
-    if (window.location.pathname === '/'){
+    if (window.location.pathname === '/') {
         set_summ_of_cart();
         fill_cart(CART);
     }
