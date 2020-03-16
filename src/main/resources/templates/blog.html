@@ -117,7 +117,8 @@
     }
 </style>
 <body>
-<div th:include="components/parts :: header-bootstrap"></div>
+<div id="sticky-navbar" th:include="components/parts :: header-bootstrap"></div>
+<div id="container-fluid"></div>
 <main>
 <section id="works">
     <div class="second-img"></div>
@@ -292,4 +293,5 @@
     })
 
 </script>
+<script th:src="@{/scripts/cart.js}"></script>
 </body>

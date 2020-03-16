@@ -45,7 +45,7 @@
         margin-top: 0.8em;
     }
 
-    .button {
+    .button, .button-non-active{
         background-color: white; /* Green */
         border: 2px solid rgba(40, 40, 40, 0.85);
         padding: 6px 23px;
@@ -60,11 +60,11 @@
         transition: 300ms;
     }
 
-    .button:hover {
+    .button:hover, .button-non-active{
         background-color: rgb(40, 40, 40);
     }
 
-    .button:hover div {
+    .button:hover div, .button-non-active div {
         color: white;
     }
 
@@ -93,9 +93,9 @@
     }
 </style>
 <body>
-<div th:include="components/parts :: header-bootstrap"></div>
-<div class="container-fluid" style="padding: 2vh 4vh">
-    <div class="row justify-content-center">
+<div id="sticky-navbar" th:include="components/parts :: header-bootstrap"></div>
+<div class="container-fluid">
+    <div class="row justify-content-center" style="margin: 1em">
         <div class="col-xs-12 page-header">
             <span class="big-bold-text">ЯГОДИЦЫ • FULLBODY</span>
         </div>
@@ -151,7 +151,7 @@
             <br>
             <div class="small-gray-text">Документ в PDF-формате. Для чтения используйте компьютер или смартфон.</div>
             <br>
-            <div style="margin-left: 50%; transform: translateX(-25%);">
+            <div style="display: flex; justify-content: center">
             <button class="button" type="button" onclick="CART.add(2)">
                 <div>КУПИТЬ</div>
             </button>
@@ -159,5 +159,14 @@
         </div>
     </div>
 </div>
+<script>
+    let parent = document.getElementsByClassName("button");
+    Array.prototype.forEach.call(parent, child => {
+        child.addEventListener('click',function (event) {
+            event.currentTarget.className = "button-non-active";
+            event.currentTarget.innerHTML = "<div>ДОБАВЛЕНО</div>";
+        })
+    });
+</script>
 <script th:src="@{/scripts/cart.js}"></script>
 </body>

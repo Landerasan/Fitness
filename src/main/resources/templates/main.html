@@ -14,7 +14,7 @@
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 <body>
-<div th:include="components/parts :: header-bootstrap"></div>
+<div  id="sticky-navbar" th:include="components/parts :: header-bootstrap"></div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-1">
@@ -33,9 +33,7 @@
 
     <div class="line">
         <div class="row">
-            <div class="col-9">
-            </div>
-            <div class="col-1">
+            <div class="col-10" style="text-align: end">
                 <span>Сумма:</span>
             </div>
             <div class="col-2">
@@ -45,23 +43,7 @@
     </div>
 </div>
 <br>
-<button style="float: right;" class="button" type="button">ыфвфыв</button>
-<script>
-    let parent = document.getElementsByClassName("button");
-    Array.prototype.forEach.call(parent, child => {
-        child.addEventListener('click',function (event) {
-            event.target.innerHTML = "КУПИТЬ";
-        })
-    });
-    // object-fit polyfill run
-    objectFitImages();
+<!--<button style="float: right;" class="button" type="button">ыфвфыв</button>-->
 
-    /* init Jarallax */
-    jarallax(document.querySelectorAll('.jarallax'));
-
-    jarallax(document.querySelectorAll('.jarallax-keep-img'), {
-        keepImg: true,
-    });
-</script>
 <script th:src="@{/scripts/cart.js}"></script>
 </body>

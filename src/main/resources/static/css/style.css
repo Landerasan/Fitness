@@ -56,3 +56,17 @@
     background: grey;
     opacity: 0.7;
 }
+
+#sticky-navbar{
+    z-index: 2;
+}
+
+.sticked {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticked + .container-fluid {
+    padding-top: 8vh;
+}
