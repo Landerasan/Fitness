@@ -45,6 +45,7 @@ const CART = {
                 console.error('Нет такого')
             }
         }
+    set_count_of_cart()
     },
     remove(id) {
         CART.contents = CART.contents.filter(item => {
@@ -107,6 +108,14 @@ function fill_cart(cart) {
     });
 }
 
+function set_count_of_cart() {
+    if (CART.contents.length === 0){document.getElementById("mycart_count").innerHTML=null}
+    else{
+        document.getElementById("mycart_count").innerHTML=CART.contents.length;
+    }
+
+}
+
 function start() {
     PICMAP = createPicMap();
     PRODUCTS = [
@@ -127,6 +136,8 @@ function start() {
         }
     ];
     CART.init();
+
+    set_count_of_cart();
 
     if (window.location.pathname === '/') {
         set_summ_of_cart();
