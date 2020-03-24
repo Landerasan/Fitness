@@ -87,7 +87,7 @@ function set_summ_of_cart() {
     CART.contents.forEach((item) => {
         ttl += item.price;
     });
-    total_price.innerText = `${ttl} руб.`;
+    total_price.innerText = `${ttl}₽`;
 
 }
 
@@ -109,9 +109,13 @@ function fill_cart(cart) {
 }
 
 function set_count_of_cart() {
-    if (CART.contents.length === 0){document.getElementById("mycart_count").innerHTML=null}
+    if (CART.contents.length === 0){
+        document.getElementById("mycart_count").innerHTML=null;
+    document.getElementById("mycart_count").style="display: none";
+    }
     else{
         document.getElementById("mycart_count").innerHTML=CART.contents.length;
+        document.getElementById("mycart_count").style="display: block";
     }
 
 }

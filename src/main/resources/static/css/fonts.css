@@ -1,0 +1,44 @@
+.small-gray-text {
+    color: #858585;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0.08em;
+}
+
+.big-bold-text {
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    line-height: 22px;
+    letter-spacing: 0.1em;
+}
+
+.bold-text{
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.08em;
+    margin: 2px 0;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.regular-text {
+    font-family: 'Inter', sans-serif;
+    /*text-transform: uppercase;*/
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.08em;
+}
+.line-text{
+    margin-bottom: 6px;
+}
+
+.price-text {
+    margin: 0.8em 0;
+}
