@@ -6,85 +6,219 @@
     <title>Shopping Cart</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/fonts.css}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,500,700|Raleway:400,500,700|Rubik:400,500,700&display=swap&subset=cyrillic"
+          rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 <style>
-    .small-gray-text{
-        color: #858585;
-        font-size: small;
-        font-style: italic;
+    .program-poster, .page-header {
+        margin-bottom: 1.9em;
     }
-    .big-bold-text{
-        font-size: medium;
-        font-weight: bold;
-    }
-    .button {
-        background-color: #333333; /* Green */
-        border: none;
-        color: white;
-        padding: 20px 40px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: large;
-        font-weight: bold;
-        margin: 4px 2px;
+
+    .button, .button-non-active{
+        outline: none;
+        background-color: white; /* Green */
+        border: 2px solid rgba(40, 40, 40, 0.85);
+        height: 60px;
+        width: 188px;
+        display: flex;
+        justify-content: center;
+        letter-spacing: 0.25em;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 1.4em 2px;
         cursor: pointer;
+        transition: 300ms;
+    }
+
+    .button:hover{
+        background-color: rgb(40, 40, 40);
+    }
+
+    .button:hover div{
+        color: white;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .text-header {
+            display: none;
+        }
+        .page-header{
+            display: flex;
+        }
+    }
+
+    @media only screen and (min-width: 768px){
+        .page-header{
+            display: none;
+        }
+    }
+    .button div {
+        color: rgba(40, 40, 40, 0.85);
+    }
+    .button__dot{
+        height: 20px;
+        width: 20px;
+        background-color: white;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    .button__animation{
+        height: 50px;
+        width: 120px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .button__dot:nth-child(1){
+        animation-delay: 0ms;
+    }
+    .button__dot:nth-child(2){
+        animation-delay: 300ms;
+    }
+    .button__dot:nth-child(3){
+        animation-delay: 600ms;
+    }
+    .black-background-text{
+        text-align: center;
+        color: #fffffd;
+        background: #262523;
+        padding: 120px 0px;
+        width: 100%;
+        position: relative;
+    }
+    .black-background-text:after{
+        content: '';
+        left: 50%;
+        transform: translate(-50%, 70px);
+        top: 0;
+        position: absolute;
+        width: 760px;
+        max-width: 92%;
+        height: 2px;
+        background: #fffffd;
+    }
+    .black-background-text:before{
+        content: '';
+        left: 50%;
+        transform: translate(-50%, -70px);
+        bottom: 0;
+        position: absolute;
+        width: 760px;
+        max-width: 92%;
+        height: 2px;
+        background: #fffffd;
+    }
+    .footer{
+        display: flex;
+        color: white;
+        justify-content: center;
+        text-align: center;
+        background: #b8926a;
+        padding: 120px 0px;
+        width: 100%;
+        font-size: 36px;
+    }
+    @media only screen and (max-width: 768px) {
+        .button{
+            margin: 1.8em auto;
+        }
+        .page-header{
+            margin-top: 0.7em;
+        }
+        .page-header, .program-poster{
+            margin-bottom: 1.2em;
+        }
+        .big-bold-text{
+            font-size: 22px;
+            line-height: 22px;
+        }
+    }
+</style>
+<style class="vtoraya">
+    .button__dot{
+        animation: 2000ms ease-in-out infinite both dot__alteration;
+    }
+    @keyframes dot__alteration {
+        0%{
+            background-color: #fffffd;
+            transform: scale(0.3);
+        }
+        25%{
+            background-color: rgb(40, 40, 40);
+            transform: scale(1);
+        }
+        50%{
+            background-color: #fffffd;
+            transform: scale(0.3);
+        }
+        100%{
+            background-color: #fffffd;
+            transform: scale(0.3);
+        }
     }
 </style>
 <body>
 <div id="sticky-navbar" th:include="components/parts :: header-bootstrap"></div>
 <div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-xs-12 col-md-4">
-            <img th:src="@{/img/poster-1.jpg}" class="img-fluid">
+    <div class="row justify-content-center" style="margin: 0.8em">
+        <div class="col-xs-12 page-header">
+            <span class="big-bold-text">НЕ ДИЕТА</span>
         </div>
-        <div class="col-xs-12 col-md-4 text-wrapper">
-        <span class="big-bold-text">«НЕ ДИЕТА. Как похудеть, набрать, поддерживать вес по науке, без заблуждений»</span>
+        <div class="col-xs-12 col-md-6 program-poster">
+            <img th:src="@{/img/nutritionposter.jpeg}" class="img-fluid">
+        </div>
+        <div class="col-xs-12 col-md-5 text-wrapper">
+            <span class="big-bold-text text-header">НЕ ДИЕТА<br></span>
             <span class="small-gray-text">Мини-руководство по питанию для достижения ваших фитнес-целей</span>
+            <div class="price-text">1990₽</div>
+            <span class="regular-text"><span class="bold-text"> Не ПП, не диета, не авторская методика.
+То, что наука знает сегодня о питании и управлении весом. Никакой шелухи, только самое важное доступным языком.</span></span>
             <br>
             <br>
-            <span class="big-bold-text">1990р.</span>
+            <div class="line-text bold-text ">Вы узнаете:</div>
+            <div class="line-text regular-text">■ что реально работает для коррекции веса;</div>
+            <div class="line-text regular-text">■ конкретно вашу суточную норму калорий, белков, жиров и углеводов для разных целей;</div>
+            <div class="line-text regular-text">■ как вести пищевой дневник в мобильном приложении для лучшего контроля рациона (это поможет двигаться к цели быстрее);</div>
+            <div class="line-text regular-text">■ какие добавки могут оказаться для вас полезными, а какие − пустая трата денег;</div>
+            <div class="line-text regular-text">■ о самых распространенных мифах и научитесь отделять котлеты от мух в теме питания.</div>
             <br>
-            <br>
-            <span>Не ПП, не диета, не авторская методика.
-То, что наука знает сегодня о питании и управлении весом. Никакой шелухи, только самое важное доступным языком</span>
-            <br>
-            <br>
-                Ключевое:
-                <br>
-−калории − это не миф, а хороший инструмент для управления весом;
-                <br>
-−"правильное" питание (ПП) может обернуться неправильными последствиями: пищевые срывы, расстройства пищевого поведения, набор веса и др.;
-                <br>
-−гибкость и комфорт в питании − ключевое для достижения и сохранения результата;
-                <br>
-−освободиться от заблуждений в питании значит сэкономить нервы, время и деньги.
-            <br>
-            <br>
-            Вы узнаете:
-            <br>
-            −что реально работает для коррекции веса;
-            <br>
-            −конкретно вашу суточную норму калорий, белков, жиров и углеводов для разных целей;
-            <br>
-            −как вести пищевой дневник в мобильном приложении для лучшего контроля рациона (это поможет двигаться к цели быстрее);
-            <br>
-            −какие добавки могут оказаться для вас полезными, а какие − пустая трата денег;
-            <br>
-            −о самых распространенных мифах и научитесь отделять котлеты от мух в теме питания.
-            <br>
-            <br>
-            <span class="small-gray-text">Документ в PDF-формате. Для чтения используйте компьютер или смартфон.</span>
-            <br>
-            <button style="float: right; border-radius: 30%" class="button" type="button" onclick="CART.add(1)">Купить</button>
+            <div class="small-gray-text">Документ в PDF-формате. Для чтения используйте компьютер или смартфон.</div>
+            <button  class="button" type="button" onclick="CART.add(1)"><div>КУПИТЬ</div></button>
         </div>
     </div>
 </div>
+<div class="black-background-text">
+    <div class="line-text1 bold-text ">Ключевое:</div>
+    <div class="line-text1 regular-text">• калории − это не миф, а хороший инструмент для управления весом;</div>
+    <div class="line-text1 regular-text">• "правильное" питание (ПП) может обернуться неправильными последствиями: <br>пищевые срывы, расстройства пищевого поведения, набор веса и др.;</div>
+    <div class="line-text1 regular-text">• гибкость и комфорт в питании − ключевое для достижения и сохранения результата;</div>
+    <div class="line-text1 regular-text">• освободиться от заблуждений в питании значит сэкономить нервы, время и деньги.</div>
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-center" style="padding: 80px 0px;background: #fffffd">
+    <div class="text-wrapper" style="width: 1000px; text-align: center; font-style: italic">
+        <div class="regular-text">
+            <span class="bold-text">ДИСКЛЕЙМЕР:</span> Я не имею высшего медицинского образования, в том числе по специальности «диетолог»,
+            и не занимаюсь диагностикой или лечением алиментарнозависимых заболеваний. Руководство призвано познакомить читателя с основами рационального питания, способами коррекции веса и целесообразностью использования пищевых добавок и применения популярных «правил» питания. Приведенная информация несет не обязательный, а рекомендательный характер, и распространяется преимущественно на здоровых людей. При наличии проблем со здоровьем проконсультируйтесь с врачом о возможности применения на практике приведенной в руководстве информации.
+        </div>
+    </div>
+</div>
+</div>
+<div class="footer">
+    <div class="footer__icon-container">
+        <a class="fab fa-instagram"></a>
+        <a class="fab fa-facebook"></a>
+        <a class="fab fa-telegram"></a>
+        <a class="fab fa-twitter"></a>
+        <a class="fab fa-whatsapp"></a>
+    </div>
+</div>
+<script th:src="@{/scripts/button.js}"></script>
 <script th:src="@{/scripts/cart.js}"></script>
 </body>

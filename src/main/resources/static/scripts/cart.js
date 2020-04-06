@@ -148,16 +148,3 @@ function start() {
         fill_cart(CART);
     }
 }
-
-window.onscroll = function() {scrollHandler()};
-
-var navbar = document.getElementById("sticky-navbar");
-var sticky = navbar.offsetTop;
-
-function scrollHandler() {
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticked")
-    } else {
-        navbar.classList.remove("sticked");
-    }
-}

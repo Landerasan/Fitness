@@ -22,12 +22,17 @@ public class GreetingController {
     }
 
     @GetMapping("/{page}")
-    public String nutrition(@PathVariable String page, Model model) {
+    public String page(@PathVariable String page, Model model) {
         return page;
     }
 
     @GetMapping("/programs/{poster}")
-    public String poster1(@PathVariable String poster,  Model model) {
+    public String programs(@PathVariable String poster,  Model model) {
+        return poster;
+    }
+
+    @GetMapping("/nutrition/{poster}")
+    public String nutrition(@PathVariable String poster,  Model model) {
         return poster;
     }
 

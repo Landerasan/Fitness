@@ -1,8 +1,8 @@
 .small-gray-text {
     color: #858585;
     font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    line-height: 10px;
+    font-size: 13px;
+    line-height: 21px;
     letter-spacing: 0.08em;
 }
 
@@ -10,8 +10,17 @@
     text-align: center;
     font-weight: 700;
     font-family: 'Inter', sans-serif;
-    font-size: 22px;
-    line-height: 22px;
+    font-size: 34px;
+    line-height: 34px;
+    letter-spacing: 0.1em;
+}
+
+.subtitle-text{
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    line-height: 24px;
     letter-spacing: 0.1em;
 }
 
@@ -29,15 +38,25 @@
 }
 
 .regular-text {
-    font-family: 'Bebas Neue Bold';
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
-    line-height: 22px;
+    line-height: 26px;
     letter-spacing: 0.08em;
 }
 .line-text{
     margin-bottom: 6px;
 }
 
+.line-text1{
+    font-family: "Bebas Neue Bold";
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.08em;
+}
+
 .price-text {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.08em;
     margin: 0.8em 0;
 }

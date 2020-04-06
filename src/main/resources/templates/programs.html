@@ -17,79 +17,84 @@
 </head>
 <style>
     * {
-        font-family: 'Bebas Neue Bold';
+        font-family: 'Rubik', sans-serif;
     }
 
-    .poster-container {
-        padding: 0.8em;
-    }
+    .img-fluid{
+                margin-top: 1em;
+                width: 70%;
+                height: 70%;
+                transform: translateX(20%);
+            }
 
-    /*.poster-container div {*/
-    /*    margin: 1em;*/
-    /*}*/
-
-    .program-poster {
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .program-poster h1 {
-        margin-top: 0.8em;
-        text-align: center;
-        font-size: 40px;
-    }
-
-    .program-poster h3 {
-        margin-top: 0.8em;
-        text-align: center;
-        font-size: 30px;
-    }
-
-    .program-poster h2 {
-        text-align: center;
-        color: gray;
-        font-weight: normal;
-        font-size: 28px;
-    }
-
-    @media only screen and (max-width: 768px) {
-        .program-poster h1 {
-            margin-top: 0.8em;
-            text-align: center;
-            font-size: 22px;
+        .program-poster {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
         }
 
-        .program-poster h2 {
+        .program-poster h1 {
+            margin-top: 0.8em;
+            margin-bottom: 0.6em;
+            text-align: center;
+            font-size: 36px;
+        }
+
+        .poster-name {
+            font-weight: 500;
+            margin-top: 0.4em;
+            text-align: center;
+            font-size: 15px;
+            line-height: 17px;
+        }
+
+        .poster-description{
+            font-size: 12px;
+            text-align: center;
+            color: gray;
+        }
+
+        .poster-price {
             text-align: center;
             color: gray;
             font-weight: normal;
-            font-size: 18px;
+            font-size: 15px;
         }
 
-        .program-poster h3 {
-            margin-top: 0.8em;
-            text-align: center;
-            font-size: 20px;
-        }
-        .text-wrapper{
-        }
+        @media only screen and (max-width: 768px) {
+            .program-poster h1 {
+                margin-top: 0.8em;
+                text-align: center;
+                font-size: 22px;
+            }
+
+            .program-poster h2 {
+                text-align: center;
+                color: gray;
+                font-weight: normal;
+                font-size: 18px;
+            }
+
+            .program-poster h3 {
+                margin-top: 0.8em;
+                text-align: center;
+                font-size: 20px;
+            }
+            .text-wrapper{
+            }
     }
 </style>
 <body>
 <div id="sticky-navbar" th:include="components/parts :: header-bootstrap"></div>
 <div class="container-fluid">
     <div class="row poster-container justify-content-center">
-        <div class="col-xs-12 col-md-5 program-poster">
-            <br>
-            <h1>ПРОГРАММЫ ТРЕНИРОВОК</h1>
-            <br>
-            <br>
+        <div class="col-xs-12 col-md-6 program-poster">
             <a href="programs/poster2">
                 <img th:src="@{/img/greyposter.jpeg}" class="img-fluid">
             </a>
-            <h3>ЯГОДИЦЫ • FULLBODY</h3>
-            <h2>1990₽</h2>
+            <div class="poster-name">ЯГОДИЦЫ • FULLBODY</div>
+            <div class="poster-description uppercase">Программа силовых тренировок</div>
+            <div class="poster-price">1990₽</div>
         </div>
     </div>
 </div>
