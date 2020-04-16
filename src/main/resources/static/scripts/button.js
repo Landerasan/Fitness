@@ -1,10 +1,10 @@
 let parent = document.getElementsByClassName("button");
 Array.prototype.forEach.call(parent, child => {
     child.addEventListener('click',async (event) => {
-        let currentButton = event.currentTarget;
-        if(currentButton.className === "button"){
-            currentButton.className = "button-non-active"
-            currentButton.innerHTML = `<div class="button__animation">
+                let currentButton = event.currentTarget;
+                if(currentButton.className === "button"){
+                    currentButton.className = "button-non-active"
+                    currentButton.innerHTML = `<div class="button__animation">
         <div class="button__dot"></div>
         <div class="button__dot"></div>
         <div class="button__dot"></div>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap" rel="stylesheet">
+</head>
+<style>
+    .header{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+    .header:before{
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: #f8f9fa;
+        z-index: 2;
+    }
+    .header__container{
+        padding: 8px 10px;
+    }
+    .header__body{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        height: 55px;
+        align-items: center;
+    }
+    .header__list{
+        display: flex;
+        position: relative;
+        z-index: 2;
+    }
+    .header__li{
+        list-style: none;
+        margin: 0px 10px 0px 10px;
+    }
+    .header__link{
+        color: #262523;
+        font-size: 18px;
+        text-decoration: none;
+        font-family: "Bebas Neue Bold";
+    }
+    .logo__img{
+        max-width: 100%;
+        display: block;
+        padding: 5px;
+    }
+    .header__logo{
+        flex: 0 0 50px;
+        z-index: 3;
+    }
+    .header__burger{
+        display: none;
+    }
+    @media (max-width: 767px) {
+        .header__burger{
+            display: block;
+            position: relative;
+            height: 20px;
+            width: 30px;
+            z-index: 3;
+            cursor: pointer;
+            padding: 3px;
+        }
+        .header__burger::before,
+        .header__burger::after{
+            content: '';
+            background-color: #262523;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            transition: 200ms ease;
+        }
+        .header__burger::before{
+            top: 4px;
+        }
+        .header__burger::after{
+            bottom: 4px;
+        }
+        .header__menu{
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            height: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding-top: 70px;
+            transition: height 600ms ease;
+        }
+        .header__menu.active{
+            height: 100vh;
+        }
+        .header__menu .header__li{
+            opacity: 0;
+            transform: scale(0);
+            transition: 600ms ease, opacity 600ms ease;
+        }
+        .header__menu.active .header__li{
+            opacity: 1;
+            transform: scale(1);
+        }
+        .header__list{
+            display: block;
+        }
+        .header__li{
+            margin-bottom: 20px;
+        }
+        .header__link{
+            font-size: 24px;
+        }
+        .header__burger.active:before{
+            transform: rotate(45deg);
+            top: 12px;
+        }
+        .header__burger.active:after{
+            transform: rotate(-45deg);
+            bottom: 12px;
+        }
+        .header__burger.collapsing:after{
+            bottom: 12px;
+        }
+        .header__burger.collapsing:before{
+            top: 12px;
+        }
+    }
+</style>
+<body>
+<div class="header">
+    <div class="header__container">
+        <div class="header__body">
+            <a href="/" class="header__logo">
+                <img class="logo__img" th:src="@{/img/logo-black.png}">
+            </a>
+            <div class="header__burger">
+            </div>
+            <div class="header__menu">
+                <ul class="header__list">
+                    <li class="header__li">
+                        <a href="" class="header__link">ПРОГРАММЫ ТРЕНИРОВОК</a>
+                    </li>
+                    <li class="header__li">
+                        <a href="" class="header__link">ПИТАНИЕ</a>
+                    </li>
+                    <li class="header__li">
+                        <a href="" class="header__link">УСЛУГИ</a>
+                    </li>
+                    <li class="header__li">
+                        <a href="" class="header__link">БЛОГ</a>
+                    </li>
+                    <li class="header__li">
+                        <a href="" class="header__link">ОБ АВТОРЕ</a>
+                    </li>
+                    <li class="header__li">
+                        <a href="" class="header__link">ДИСКЛЕЙМЕР</a>
+                    </li>
+                    <li class="header__li">
+                        <a href="" class="header__link">КОНТАКТЫ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    let burger = document.querySelector('.header__burger');
+    burger.addEventListener('click', ()=>{
+        let headerMenu = document.querySelector('.header__menu');
+        if(burger.classList.contains("active")){
+            burger.classList.toggle('collapsing');
+            burger.classList.toggle('active');
+            setTimeout(()=>{
+                burger.classList.toggle('collapsing');
+                headerMenu.classList.toggle('active');
+                let numberOfIterations = 0;
+                Array.from(document.getElementsByClassName('header__li')).reverse().forEach((e) => {
+                    e.setAttribute("style", `transition-delay: ${numberOfIterations*66}ms;`)
+                    numberOfIterations++;
+                })
+            }, 200);
+        }
+        else
+        {
+            burger.classList.toggle('collapsing');
+            setTimeout(()=>{
+                burger.classList.toggle('active');
+                burger.classList.toggle('collapsing');
+                headerMenu.classList.toggle('active');
+                let numberOfIterations = 0;
+                Array.from(document.getElementsByClassName('header__li')).forEach((e) => {
+                    e.setAttribute("style", `transition-delay: ${numberOfIterations*66}ms;`)
+                    numberOfIterations++;
+                })
+            }, 200);
+        }
+    })
+</script>
+</html>
