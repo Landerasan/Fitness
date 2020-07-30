@@ -10,26 +10,36 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Inter:400,500,700|Raleway:400,500,700|Rubik:400,500,700&display=swap&subset=cyrillic"
           rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 <style>
+    html{
+        overflow-x: hidden;
+    }
     .column__header{
         font-family: "Bebas Neue Bold";
         font-size: 24px;
     }
-    .container-fluid{
-        font-family: 'Inter', sans-serif;
+    .my-mission{
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0f0f0;
+        padding-bottom: 8em;
+    }
+    .my-education{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 20px;
     }
     .fotka{
-        font-family: 'Inter', sans-serif;
         height: 1000px;
         width: 100%;
         background-position: center top;
         background-size: cover;
-        background-image: url('https://cdn.discordapp.com/attachments/692063229467426906/699633655944970240/IMG_7035.jpg')
+        background-image: url('https://cdn.discordapp.com/attachments/692063229467426906/712599055750135858/IMG_7035.jpg')
     }
     .photo__header:before{
         position: absolute;
@@ -46,6 +56,7 @@
     }
     .photo__text{
         font-size: 16px;
+        font-family: 'Roboto', sans-serif;
     }
     .black-background-text{
         text-align: center;
@@ -77,18 +88,26 @@
         height: 2px;
         background: #fffffd;
     }
+    .footer{
+        display: flex;
+        color: black;
+        justify-content: center;
+        text-align: center;
+        background: #fffffd;
+        padding: 80px 0px 40px 0px;
+        width: 100%;
+        font-size: 26px;
+    }
 </style>
 <body>
 <div  id="sticky-navbar" th:include="components/parts :: header-bootstrap"></div>
-</div>
 <br>
 <br>
 <div class="fotka">
     <div class="row justify-content-center">
         <div class="col-1">
-
         </div>
-        <div class="col-4" style="font-family: 'Inter', sans-serif">
+        <div class="col-4" style="font-family: 'Roboto', sans-serif">
             <div style="padding-top: 150px">
                 <div class="photo__lineContainer">
                     <div class="photo__header" style="font-size: 40px; font-weight: 700;">
@@ -101,7 +120,7 @@
                     У меня нет никакой «авторской методики» похудения, и я не устраиваю марафоны-«сушки», чтобы сделать вас временно стройными в ущерб здоровью.
                     <br>
                     <br>
-                    Я стараюсь не отставать от последних научных данных в фитнесе и придерживаться здравого смысла в вопросах тренировок и питания. Поэтому от меня не услышать чуши типа «сахар — зло», «BCAA усиливает рост мышц» (читайте мое <span class="bolder">руководство по питанию</span>) или «выводить колени за носки в приседаниях опасно».
+                    Я стараюсь не отставать от последних научных данных в фитнесе и придерживаться здравого смысла в вопросах тренировок и питания. Поэтому от меня не услышать чуши типа «сахар – зло», «BCAA усиливает рост мышц» (читайте мое <span class="bolder">руководство по питанию</span>) или «выводить колени за носки в приседаниях опасно».
                     <br>
                     <br>
                     Вы можете тренироваться со мной <span class="bolder">персонально</span> и <span class="bolder">дистанционно</span>. Или заниматься самостоятельно по моим <span class="bolder">программам в PDF-формате</span>.
@@ -113,7 +132,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid my-mission">
     <div class="row justify-content-center">
         <div class="col-12">
             <br>
@@ -127,9 +146,9 @@
             <br>
             <br>
         </div>
-        <div class="col-2"><span class="bold fs18">МОЯ МИССИЯ – сделать так, чтобы как можно больше людей стали более грамотными в вопросах ЗОЖ, перестали верить мифам и начали менять жизнь к лучшему.
+        <div class="col-2"><span class="bolder fs18">МОЯ МИССИЯ</span><span class="bold fs18"> – сделать так, чтобы как можно больше людей стали более грамотными в вопросах ЗОЖ, перестали верить мифам и начали менять жизнь к лучшему.
 <br><br>
-            Я хочу, чтобы фитнес выполнял свое истинное предназначение –делал людей здоровее. Не только физически, но и морально.
+            Я хочу, чтобы фитнес выполнял свое истинное предназначение – делал людей здоровее. Не только физически, но и морально.
 <br><br>
             Сегодня ситуация, к сожалению, другая. И я одна из тех, кто хочет это изменить.</span></div>
         <div class="col-3"><span class="column__header">ТЕМНАЯ СТОРОНА ФИТНЕСА</span><br>
@@ -139,7 +158,7 @@
             <br><br>
             Мы ведёмся на картинку. Потому что видим внешний результат, а не то, что за ним кроется. Хотим так же, как вон та фитоняшка из Instagram, следуем рекомендациям по большому счету неизвестного нам человека. А дальше все по знакомому всем сценарию: <span class="bold">жесткая диета + изнурительные тренировки – срыв с диеты + перетренированность – ослабленный иммунитет, хрупкость костей, сбитый менструальный цикл и расстройства пищевого поведения.</span>
             <br><br>
-            Итог: "Я никчемный, ленивый, безвольный, хуже других. И вообще, фитнес–дерьмо!"</div>
+            Итог: "Я никчемный, ленивый, безвольный, хуже других. И вообще, фитнес – дерьмо!"</div>
         <div class="col-3"><span class="column__header">СВЕТЛАЯ СТОРОНА ФИТНЕСА</span><br>
             Мы можем слепо верить всему услышанному от своего тренера-качка о "лучшем" способе нарастить мышцы, или тёте Вале об эффективном похудении, потому что она скинула 20 кг на кремлевской диете. Но противиться тому, что исследования на обширных группах людей показали бесполезность той или иной раскрученной добавки, и идти против законов физики, которые объясняют, как человек реально худеет – просто быть себе врагом.
             <br><br>
@@ -154,10 +173,6 @@
         </div>
     </div>
 </div>
-<br>
-<br>
-<br>
-<br>
 <div class="black-background-text">
     <div class="line-text1 regular-text">
         замкнутый круг: жесткая диета + изнурительные тренировки  →
@@ -170,24 +185,34 @@
 <br>
 <br>
 <br>
-<div class="row justify-content-center">
-    <div class="col-4">
-        <div style="font-size: 40px; font-weight: 700;">МОЕ ОБРАЗОВАНИЕ</div>
-        Я фитнес-тренер, сертифицированный Ассоциацией Профессионалов Фитнеса (FPA, Москва, 2018)
+<div class="row justify-content-center my-education">
+    <div class="col-5">
+        <div style="font-size: 34px; font-weight: 700; letter-spacing: 0.1em;">МОЕ ОБРАЗОВАНИЕ</div>
+        <br>
+        <span class="bold">Я фитнес-тренер, сертифицированный Ассоциацией Профессионалов Фитнеса (FPA, Москва, 2018)</span>
         <br>
         <br>
-        Почему это важно?
-        FPA – учебный центр, аккредитованный EHFA* (European Health & Fitness Association). Это значит, что мой сертификат признан программой EREPS* (European Register of Exercise Professionals), и вы можете найти мое имя в реестре аккредитованных специалистов по тренировкам на сайте ereps.eu.</div>
-    <div class="col-4">Что изучалось?
+        <span class="bolder">Почему это важно?</span>
+        <br>
+        <span class="bold">FPA</span> – учебный центр, аккредитованный <span class="bold">EHFA</span> (European Health & Fitness Association). Это значит, что мой сертификат признан программой <span class="bold">EREPS</span> (European Register of Exercise Professionals), и вы можете найти мое имя в реестре аккредитованных специалистов по тренировкам на сайте ereps.eu.</div>
+    <div style="font-size: 18px" class="col-5">
+        <div style="padding-top: 5px"></div>
+        <span class="bolder">Что изучалось?</span>
+        <br>
         Анатомия, физиология, биомеханика, теория и методика фитнес-тренировки, техника выполнения силовых упражнений, основные тренировочные принципы, периодизация тренировочного процесса и основы рационального сбалансированного питания.
         <br>
         <br>
-        Продолжаю узнавать новое
-        У меня есть высшее образование переводчика (английский, французский). Это позволяет дополнять и обновлять мои знания, ведь актуальная информация в основном транслируется на английском языке. Знакомство с научно-обоснованными данными и мнениями разных экспертов дает возможность не упираться в свой предыдущий опыт и мыслить критически.</div>
+        <div style="padding-top: 12px"></div>
+        <span class="bold">Продолжаю узнавать новое</span>
+        <br>
+        У меня есть высшее образование переводчика. Это позволяет дополнять и обновлять мои знания, ведь актуальная информация в основном транслируется на английском языке. Знакомство с научно-обоснованными данными и мнениями разных экспертов дает возможность <span class="bold">не упираться в свой предыдущий опыт</span> и <span class="bold">мыслить критически.</span></div>
 </div>
-<br>
-<br>
-<br>
-<br>
+<div class="footer">
+    <div class="footer__icon-container">
+        <a class="fab fa-whatsapp"></a>
+        <a class="fab fa-instagram"></a>
+        <a class="fab fa-telegram"></a>
+    </div>
+</div>
 </body>
 </html>

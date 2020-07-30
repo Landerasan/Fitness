@@ -110,12 +110,12 @@ function fill_cart(cart) {
 
 function set_count_of_cart() {
     if (CART.contents.length === 0){
-        document.getElementById("mycart_count").innerHTML=null;
-    document.getElementById("mycart_count").style="display: none";
+        document.getElementById("cart__count").innerHTML=null;
+    document.getElementById("cart__count").style="display: none";
     }
     else{
-        document.getElementById("mycart_count").innerHTML=CART.contents.length;
-        document.getElementById("mycart_count").style="display: block";
+        document.getElementById("cart__count").innerHTML=CART.contents.length;
+        document.getElementById("cart__count").style="display: block";
     }
 
 }

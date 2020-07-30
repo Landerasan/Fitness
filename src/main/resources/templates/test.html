@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 <style>
     .header{
@@ -27,13 +28,13 @@
         z-index: 2;
     }
     .header__container{
-        padding: 8px 10px;
+        padding: 6px 10px;
     }
     .header__body{
         position: relative;
         display: flex;
         justify-content: space-between;
-        height: 55px;
+        height: 45px;
         align-items: center;
     }
     .header__list{
@@ -57,18 +58,46 @@
         padding: 5px;
     }
     .header__logo{
-        flex: 0 0 50px;
+        flex: 0 0 40px;
         z-index: 3;
     }
     .header__burger{
         display: none;
     }
+    .header__cart{
+        display: flex;
+        order: 2;
+    }
+    .cart__container{
+        position: relative;
+        z-index: 2;
+    }
+    .fa-shopping-cart{
+        font-size: 28px;
+        margin-right: 15px;
+    }
+    .cart__count{
+        font-family: 'Inter', sans-serif;
+        position: absolute;
+        background-color: red;
+        border-radius: 50%;
+        line-height: 16px;
+        width: 16px;
+        height: 16px;
+        z-index: 3;
+        text-align: center;
+        right: 10px;
+        top: -4px;
+        font-size: 10px;
+        color: white;
+    }
+
     @media (max-width: 767px) {
         .header__burger{
             display: block;
             position: relative;
             height: 20px;
-            width: 30px;
+            width: 20px;
             z-index: 3;
             cursor: pointer;
             padding: 3px;
@@ -84,10 +113,10 @@
             transition: 200ms ease;
         }
         .header__burger::before{
-            top: 4px;
+            top: 5px;
         }
         .header__burger::after{
-            bottom: 4px;
+            bottom: 5px;
         }
         .header__menu{
             overflow: hidden;
@@ -97,29 +126,32 @@
             left: 0;
             width: 100%;
             background-color: #f8f9fa;
-            padding-top: 70px;
-            transition: height 600ms ease;
+            padding-top: 50px;
+            transition: height 300ms steps(20);
         }
         .header__menu.active{
             height: 100vh;
         }
         .header__menu .header__li{
             opacity: 0;
-            transform: scale(0);
+            transform: translateY(-150%);
+            /*transform: scale(0);*/
             transition: 600ms ease, opacity 600ms ease;
         }
         .header__menu.active .header__li{
             opacity: 1;
-            transform: scale(1);
+            transform: translateY(0%);
+            /*transform: scale(1);*/
         }
         .header__list{
+            margin-top: 20px;
             display: block;
         }
         .header__li{
             margin-bottom: 20px;
         }
         .header__link{
-            font-size: 24px;
+            font-size: 22px;
         }
         .header__burger.active:before{
             transform: rotate(45deg);
@@ -135,7 +167,49 @@
         .header__burger.collapsing:before{
             top: 12px;
         }
+        .header__cart{
+            order: 0;
+        }
     }
+</style>
+<style>
+    .body__container{
+        padding-top: 60px;
+    }
+    .body__carousel{
+        margin: auto;
+        position: relative;
+        max-width: 1000px;
+    }
+    .carousel__image{
+        width: 100%;
+        height: 100%;
+        user-select: none;
+        opacity: 0;
+        transition: all 600ms;
+    }
+    .carousel__slide{
+        top: 0;
+        display: block;
+        position: absolute;
+    }
+    #carousel__right, #carousel__left{
+        position: absolute;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 1;
+        user-select: none;
+    }
+    #carousel__left{
+        left: 0%;
+    }
+    #carousel__right{
+        right: 0%;
+    }
+    .carousel__image.--active{
+        opacity: 1;
+    }
+
 </style>
 <body>
 <div class="header">
@@ -144,6 +218,14 @@
             <a href="/" class="header__logo">
                 <img class="logo__img" th:src="@{/img/logo-black.png}">
             </a>
+            <div class="header__cart">
+                <div class="cart__container">
+                    <div class="cart__count" id="cart__count">
+                        <span></span>
+                    </div>
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
             <div class="header__burger">
             </div>
             <div class="header__menu">
@@ -174,7 +256,56 @@
         </div>
     </div>
 </div>
+<div class="body__container">
+    <div class="body__carousel">
+            <div class="carousel__slide">
+                <img class="carousel__image --active" th:src="@{/img/poster-1.jpg}">
+            </div>
+            <div class="carousel__slide">
+                <img class="carousel__image" th:src="@{/img/poster-2.jpg}">
+            </div>
+            <div class="carousel__slide">
+                <img class="carousel__image" th:src="@{/img/poster-3.jpg}">
+            </div>
+            <div class="carousel__slide">
+                <img class="carousel__image" th:src="@{/img/poster-4.jpg}">
+            </div>
+            <i onclick="goRight()" class="fas fa-arrow-right" id="carousel__right"></i>
+            <i onclick="goLeft()" class="fas fa-arrow-left" id="carousel__left"></i>
+    </div>
+</div>
 </body>
+<script>
+    let imageList = document.querySelectorAll(".carousel__image");
+    let currentSlide = 0;
+
+    function goLeft(){
+        imageList[currentSlide % imageList.length].classList.toggle("--active");
+        currentSlide--;
+        if(currentSlide < 0){
+            currentSlide = currentSlide + imageList.length;
+        }
+        imageList[currentSlide % imageList.length].classList.toggle("--active");
+        let height = imageList[currentSlide % imageList.length].offsetHeight;
+        document.querySelector("#carousel__left").setAttribute('style', `top: ${height / 2};`);
+        document.querySelector("#carousel__right").setAttribute('style', `top: ${height / 2};`);
+        console.log(height);
+    }
+
+    function goRight(){
+        imageList[currentSlide % imageList.length].classList.toggle("--active");
+        currentSlide++;
+        if(currentSlide < 0){
+            currentSlide = currentSlide + imageList.length;
+        }
+        imageList[currentSlide % imageList.length].classList.toggle("--active");
+        let height = imageList[currentSlide % imageList.length].offsetHeight;
+        document.querySelector("#carousel__left").setAttribute('style', `top: ${height / 2};`);
+        document.querySelector("#carousel__right").setAttribute('style', `top: ${height / 2};`);
+        console.log(height);
+    }
+</script>
+<script th:src="@{/scripts/cart.js}"></script>
 <script>
     let burger = document.querySelector('.header__burger');
     burger.addEventListener('click', ()=>{
@@ -185,10 +316,8 @@
             setTimeout(()=>{
                 burger.classList.toggle('collapsing');
                 headerMenu.classList.toggle('active');
-                let numberOfIterations = 0;
-                Array.from(document.getElementsByClassName('header__li')).reverse().forEach((e) => {
-                    e.setAttribute("style", `transition-delay: ${numberOfIterations*66}ms;`)
-                    numberOfIterations++;
+                Array.from(document.getElementsByClassName('header__li')).reverse().forEach((e, index) => {
+                    e.setAttribute("style", `transition-delay: ${index*66}ms;`)
                 })
             }, 200);
         }
@@ -199,10 +328,8 @@
                 burger.classList.toggle('active');
                 burger.classList.toggle('collapsing');
                 headerMenu.classList.toggle('active');
-                let numberOfIterations = 0;
-                Array.from(document.getElementsByClassName('header__li')).forEach((e) => {
-                    e.setAttribute("style", `transition-delay: ${numberOfIterations*66}ms;`)
-                    numberOfIterations++;
+                Array.from(document.getElementsByClassName('header__li')).forEach((e, index) => {
+                    e.setAttribute("style", `transition-delay: ${index*66}ms;`)
                 })
             }, 200);
         }
