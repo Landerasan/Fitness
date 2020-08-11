@@ -20,20 +20,20 @@
         font-family: 'Rubik', sans-serif;
     }
 
-    .img-fluid{
+    .poster__img{
         margin-top: 1em;
         width: 70%;
         height: 70%;
         transform: translateX(20%);
     }
 
-    .program-poster {
+    .program__poster {
         height: 100%;
         width: 100%;
         overflow: hidden;
     }
 
-    .program-poster h1 {
+    .program__poster h1 {
         margin-top: 0.8em;
         margin-bottom: 0.6em;
         text-align: center;
@@ -62,20 +62,20 @@
     }
 
     @media only screen and (max-width: 768px) {
-        .program-poster h1 {
+        .program__poster h1 {
             margin-top: 0.8em;
             text-align: center;
             font-size: 22px;
         }
 
-        .program-poster h2 {
+        .program__poster h2 {
             text-align: center;
             color: gray;
             font-weight: normal;
             font-size: 18px;
         }
 
-        .program-poster h3 {
+        .program__poster h3 {
             margin-top: 0.8em;
             text-align: center;
             font-size: 20px;
@@ -88,9 +88,9 @@
 <div  id="sticky-navbar" th:include="components/parts :: header-bootstrap"></div>
 <div class="container-fluid">
     <div class="row poster-container justify-content-center">
-        <div class="col-xs-12 col-md-6 program-poster">
+        <div class="col-xs-12 col-md-6 program__poster">
             <a href="nutrition/poster1">
-                <img th:src="@{/img/nutritionposter.jpeg}" class="img-fluid">
+                <img th:src="@{/img/nutritionposter.jpeg}" class="poster__img">
             </a>
             <div class="poster-name">НЕ ДИЕТА</div>
             <div class="poster-description uppercase">Как похудеть, набрать, поддерживать вес <br>по науке, без заблуждений</div>

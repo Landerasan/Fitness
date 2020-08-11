@@ -41,9 +41,13 @@
     #checkmark path{
         stroke-dashoffset: 20px;
     }
+    .cart__row{
+
+    }
 </style>
 <body>
-<div  id="sticky-navbar" th:include="components/parts :: header-bootstrap"></div>
+<!--<div  id="sticky-navbar" th:include="components/parts :: header-bootstrap"></div>-->
+<div  id="sticky-navbar" th:include="components/parts :: header"></div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-1">
@@ -68,6 +72,11 @@
                 <span id="summ_of_cart"></span>
             </div>
         </div>
+    </div>
+</div>
+<div class="cart__container">
+    <div class="cart__row">
+
     </div>
 </div>
 <br>
