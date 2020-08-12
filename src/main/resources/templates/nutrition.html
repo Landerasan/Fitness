@@ -7,17 +7,22 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" th:href="@{/css/fonts.css}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap&subset=cyrillic"
           rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 <style>
     * {
         font-family: 'Rubik', sans-serif;
+        box-sizing: border-box;
+    }
+
+    #sticky-navbar + .container {
+        padding-top: 8vh;
     }
 
     .poster__img{
@@ -31,34 +36,46 @@
         height: 100%;
         width: 100%;
         overflow: hidden;
+        flex:0 0 50%;
     }
 
-    .program__poster h1 {
-        margin-top: 0.8em;
-        margin-bottom: 0.6em;
-        text-align: center;
-        font-size: 36px;
-    }
-
-    .poster-name {
+    .poster__name {
         font-weight: 500;
         margin-top: 0.4em;
         text-align: center;
         font-size: 15px;
-        line-height: 17px;
+        line-height: 22px;
     }
 
-    .poster-description{
+    .poster__description{
         font-size: 12px;
         text-align: center;
+        line-height: 22px;
         color: gray;
     }
 
-    .poster-price {
+    .poster__price {
         text-align: center;
         color: gray;
         font-weight: normal;
         font-size: 15px;
+        line-height: 22px;
+    }
+
+    .container__poster{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    .container{
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
     }
 
     @media only screen and (max-width: 768px) {
@@ -80,23 +97,22 @@
             text-align: center;
             font-size: 20px;
         }
-        .text-wrapper{
-        }
     }
 </style>
 <body>
-<div  id="sticky-navbar" th:include="components/parts :: header-bootstrap"></div>
-<div class="container-fluid">
-    <div class="row poster-container justify-content-center">
-        <div class="col-xs-12 col-md-6 program__poster">
+<div  id="sticky-navbar" th:include="components/parts :: header"></div>
+<div class="container">
+    <div class="container__poster">
+        <div class="program__poster">
             <a href="nutrition/poster1">
                 <img th:src="@{/img/nutritionposter.jpeg}" class="poster__img">
             </a>
-            <div class="poster-name">НЕ ДИЕТА</div>
-            <div class="poster-description uppercase">Как похудеть, набрать, поддерживать вес <br>по науке, без заблуждений</div>
-            <div class="poster-price">1990₽</div>
+            <div class="poster__name">НЕ ДИЕТА</div>
+            <div class="poster__description uppercase">Как похудеть, набрать, поддерживать вес <br>по науке, без заблуждений</div>
+            <div class="poster__price">1990₽</div>
         </div>
     </div>
 </div>
+<script th:src="@{/scripts/cart.js}"></script>
 </body>
 </html>

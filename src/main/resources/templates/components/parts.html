@@ -25,7 +25,7 @@
             z-index: 2;
         }
         .header__container{
-            padding: 6px 10px;
+            padding: 14px 20px;
         }
         .header__body{
             position: relative;
@@ -41,7 +41,7 @@
         }
         .header__li{
             list-style: none;
-            margin: 0px 10px 0px 10px;
+            margin: 0px 20px 0px 20px;
         }
         .header__link{
             color: #262523;
@@ -49,13 +49,16 @@
             text-decoration: none;
             font-family: "Bebas Neue Bold";
         }
+        .header__li :hover{
+            color: #767778;
+        }
         .logo__img{
             max-width: 100%;
             display: block;
             padding: 5px;
         }
         .header__logo{
-            flex: 0 0 40px;
+            flex: 0 0 80px;
             z-index: 3;
         }
         .header__burger{
@@ -87,6 +90,8 @@
             top: -4px;
             font-size: 10px;
             color: white;
+            -webkit-touch-callout: none;
+            user-select: none;
         }
 
         @media (max-width: 767px) {
@@ -188,25 +193,25 @@
                 <div class="header__menu">
                     <ul class="header__list">
                         <li class="header__li">
-                            <a href="/programs/" class="header__link">ПРОГРАММЫ ТРЕНИРОВОК</a>
+                            <a href="/programs" class="header__link">ПРОГРАММЫ ТРЕНИРОВОК</a>
                         </li>
                         <li class="header__li">
-                            <a href="/nutrition/" class="header__link">ПИТАНИЕ</a>
+                            <a href="/nutrition" class="header__link">ПИТАНИЕ</a>
                         </li>
                         <li class="header__li">
-                            <a href="services" class="header__link">УСЛУГИ</a>
+                            <a href="/services" class="header__link">УСЛУГИ</a>
                         </li>
                         <li class="header__li">
-                            <a href="blog" class="header__link">БЛОГ</a>
+                            <a href="/blog" class="header__link">БЛОГ</a>
                         </li>
                         <li class="header__li">
-                            <a href="about" class="header__link">ОБ АВТОРЕ</a>
+                            <a href="/about" class="header__link">ОБ АВТОРЕ</a>
                         </li>
                         <li class="header__li">
-                            <a href="disclaimer" class="header__link">ДИСКЛЕЙМЕР</a>
+                            <a href="/disclaimer" class="header__link">ДИСКЛЕЙМЕР</a>
                         </li>
                         <li class="header__li">
-                            <a href="contact" class="header__link">КОНТАКТЫ</a>
+                            <a href="/contact" class="header__link">КОНТАКТЫ</a>
                         </li>
                     </ul>
                 </div>
