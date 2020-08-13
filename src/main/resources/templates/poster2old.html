@@ -7,15 +7,143 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" th:href="@{/css/fonts.css}">
-    <link rel="stylesheet" th:href="@{/css/posters.css}">
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Inter:400,500,700|Raleway:400,500,700|Rubik:400,500,700&display=swap&subset=cyrillic"
           rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
+<style>
+    .column__poster, .page-header {
+        margin-bottom: 1.9em;
+    }
+
+    .button, .button-non-active{
+        outline: none;
+        background-color: white; /* Green */
+        border: 2px solid rgba(40, 40, 40, 0.85);
+        height: 60px;
+        width: 188px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: 0.25em;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 1.4em 2px;
+        cursor: pointer;
+        transition: 300ms;
+    }
+
+    .button:hover{
+        background-color: rgb(40, 40, 40);
+    }
+
+    .button:hover div{
+        color: white;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .text-header {
+            display: none;
+        }
+        .page-header{
+            display: flex;
+        }
+    }
+
+    @media only screen and (min-width: 768px){
+        .page-header{
+            display: none;
+        }
+    }
+    .button div {
+        color: rgba(40, 40, 40, 0.85);
+    }
+    .button__dot{
+        height: 20px;
+        width: 20px;
+        background-color: white;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    .button__animation{
+        height: 50px;
+        width: 120px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .button__dot:nth-child(1){
+        animation-delay: 0ms;
+    }
+    .button__dot:nth-child(2){
+        animation-delay: 300ms;
+    }
+    .button__dot:nth-child(3){
+        animation-delay: 600ms;
+    }
+    .black-background-text{
+        text-align: center;
+        color: #fffffd;
+        background: #262523;
+        padding: 120px 0px;
+        width: 100%;
+        position: relative;
+    }
+    .black-background-text:after{
+        content: '';
+        left: 50%;
+        transform: translate(-50%, 70px);
+        top: 0;
+        position: absolute;
+        width: 760px;
+        max-width: 92%;
+        height: 2px;
+        background: #fffffd;
+    }
+    .black-background-text:before{
+        content: '';
+        left: 50%;
+        transform: translate(-50%, -70px);
+        bottom: 0;
+        position: absolute;
+        width: 760px;
+        max-width: 92%;
+        height: 2px;
+        background: #fffffd;
+    }
+    .footer{
+        display: flex;
+        color: black;
+        justify-content: center;
+        text-align: center;
+        background: #fffffd;
+        padding: 80px 0px 40px 0px;
+        width: 100%;
+        font-size: 26px;
+    }
+    @media only screen and (max-width: 768px) {
+        .black-background-text{
+            padding: 120px 15px;
+        }
+        .button{
+            margin: 1.8em auto;
+        }
+        .page-header{
+            margin-top: 0.6em;
+        }
+        .page-header, .column__poster{
+            margin-bottom: 1.2em;
+        }
+        .big-bold-text{
+            font-size: 22px;
+            line-height: 22px;
+        }
+    }
+</style>
 <style class="vtoraya">
     .button__dot{
         animation: 2000ms ease-in-out infinite both dot__alteration2;
@@ -40,16 +168,16 @@
     }
 </style>
 <body>
-<div id="sticky-navbar" th:include="components/parts :: header"></div>
-<div class="container">
-    <div class="container__column" style="margin: 0.8em">
+<div id="sticky-navbar" th:include="components/parts :: header-bootstrap"></div>
+<div class="container-fluid">
+    <div class="row justify-content-center" style="margin: 0.8em">
         <div class="col-xs-12 page-header">
             <span class="big-bold-text">ЯГОДИЦЫ • FULLBODY</span>
         </div>
         <div class="col-xs-12 col-md-6 column__poster">
             <img th:src="@{/img/greyposter.jpeg}" class="poster__img">
         </div>
-        <div class="column__text">
+        <div class="col-xs-12 col-md-5 column__text">
             <span class="big-bold-text text-header">ЯГОДИЦЫ • FULLBODY<br></span>
             <span class="small-gray-text">Программа силовых тренировок на все тело (full body) с акцентом на ягодичные мышцы для среднего и высокого уровней тренированности</span>
             <div class="price-text">1590₽</div>
@@ -76,9 +204,7 @@
                 <div>КУПИТЬ</div>
             </button>
         </div>
-    </div>
-    <div class="container__column" style="margin: 0.8em">
-        <div class="column__plaintext">
+        <div class="col-xs-12 col-md-6 col-xl-10 column__text">
             <div class="bold-text line-text">Вам нужна эта программа, если вы:</div>
             <div class="regular-text line-text">■ хотите сильные и эстетичные ягодицы (необязательно большие − "подтянутые",
                 атлетичные);
@@ -122,9 +248,9 @@
     <div class=" line-text1">• вы не беременны и не планируете ребенка в ближайшее время;</div>
     <div class=" line-text1">• вы настроены на результат.</div>
 </div>
-<div class="container">
-    <div class="container__column" style="padding: 80px 0px;background: #fffffd">
-        <div class="column__plaintexttext" style="width: 1000px; text-align: center; font-style: italic">
+<div class="container-fluid">
+    <div class="row justify-content-center" style="padding: 80px 0px;background: #fffffd">
+        <div class="column__text" style="width: 1000px; text-align: center; font-style: italic">
             <div class="regular-text">
                 <span class="bold-text">ДИСКЛЕЙМЕР:</span> Я не имеею высшего медицинского образования, в том числе по специальности "реабилитолог".
                 Разработанные мной программы тренировок не направлены на диагностирование и лечение каких-либо заболеваний и не являются альтернативой медицинским рекомендациям.
@@ -141,7 +267,7 @@
         <a class="fab fa-telegram"></a>
     </div>
 </div>
-    <script th:src="@{/scripts/button.js}"></script>
-    <script th:src="@{/scripts/cart.js}"></script>
+<script th:src="@{/scripts/button.js}"></script>
+<script th:src="@{/scripts/cart.js}"></script>
 </body>
 </html>
