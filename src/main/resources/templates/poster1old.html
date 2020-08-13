@@ -7,39 +7,17 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" th:href="@{/css/fonts.css}">
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Inter:400,500,700|Raleway:400,500,700|Rubik:400,500,700&display=swap&subset=cyrillic"
           rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 <style>
-    .container__column{
-        display: flex;
-    }
-
-    .container__column > div{
-        margin: 10px;
-    }
-
-    .column__poster{
-        flex: 0 0 50%;
-        flex-wrap: nowrap;
-    }
-
-    .column__text{
-        flex: 0 0 50%;
-        flex-wrap: nowrap;
-    }
-
     .column__poster, .page-header {
         margin-bottom: 1.9em;
-    }
-
-    .poster__img{
-        width: 100%;
     }
 
     .button, .button-non-active{
@@ -187,10 +165,10 @@
     }
 </style>
 <body>
-<div id="sticky-navbar" th:include="components/parts :: header"></div>
-<div class="container">
-    <div class="container__column" style="margin: 0.8em">
-        <div class="page-header">
+<div id="sticky-navbar" th:include="components/parts :: header-bootstrap"></div>
+<div class="container-fluid">
+    <div class="row justify-content-center" style="margin: 0.8em">
+        <div class="col-xs-12 page-header">
             <span class="big-bold-text">НЕ ДИЕТА</span>
         </div>
         <div class="col-xs-12 col-md-6 column__poster">
@@ -225,13 +203,13 @@
 </div>
 <div class="container-fluid">
     <div class="row justify-content-center" style="padding: 80px 0px;background: #fffffd">
-    <div class="column__text" style="width: 1000px; text-align: center; font-style: italic">
-        <div class="regular-text">
-            <span class="bold-text">ДИСКЛЕЙМЕР:</span> Я не имею высшего медицинского образования, в том числе по специальности «диетолог»,
-            и не занимаюсь диагностикой или лечением алиментарнозависимых заболеваний. Руководство призвано познакомить читателя с основами рационального питания, способами коррекции веса и целесообразностью использования пищевых добавок и применения популярных «правил» питания. Приведенная информация несет не обязательный, а рекомендательный характер, и распространяется преимущественно на здоровых людей. При наличии проблем со здоровьем проконсультируйтесь с врачом о возможности применения на практике приведенной в руководстве информации.
+        <div class="column__text" style="width: 1000px; text-align: center; font-style: italic">
+            <div class="regular-text">
+                <span class="bold-text">ДИСКЛЕЙМЕР:</span> Я не имею высшего медицинского образования, в том числе по специальности «диетолог»,
+                и не занимаюсь диагностикой или лечением алиментарнозависимых заболеваний. Руководство призвано познакомить читателя с основами рационального питания, способами коррекции веса и целесообразностью использования пищевых добавок и применения популярных «правил» питания. Приведенная информация несет не обязательный, а рекомендательный характер, и распространяется преимущественно на здоровых людей. При наличии проблем со здоровьем проконсультируйтесь с врачом о возможности применения на практике приведенной в руководстве информации.
+            </div>
         </div>
     </div>
-</div>
 </div>
 <div class="footer">
     <div class="footer__icon-container">
