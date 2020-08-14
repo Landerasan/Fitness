@@ -38,7 +38,7 @@
     outline: 0 !important;
 }
 
-#sticky-navbar + .container-fluid {
+#sticky-navbar + .container {
     padding-top: 8vh;
 }
 
