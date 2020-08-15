@@ -39,11 +39,7 @@
 }
 
 #sticky-navbar + .container {
-    padding-top: 8vh;
-}
-
-#sticky-navbar + .container {
-    padding-top: 8vh;
+    padding-top: 10vh;
 }
 
 .mycart_count{
