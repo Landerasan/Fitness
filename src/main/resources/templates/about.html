@@ -17,31 +17,7 @@
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 <style>
-    html{
-        overflow-x: hidden;
-    }
-    .column__header{
-        font-family: "Bebas Neue Bold";
-        font-size: 24px;
-    }
-    .container__my-mission{
-        font-family: 'Roboto', sans-serif;
-        background-color: #f0f0f0;
-        padding-bottom: 8em;
-    }
-    .container__my-education{
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
-        font-size: 20px;
-    }
-    .backgroundphoto{
-        height: 1000px;
-        width: 100%;
-        background-position: center top;
-        background-size: cover;
-        background-image: url("/img/img_7035.jpg");
-    }
-    .photo__header:before{
+    .backgroundphoto__header:before{
         position: absolute;
         content: '';
         height: 2px;
@@ -50,13 +26,74 @@
         width: 8em;
         background-color: #414141;
     }
-    .photo__lineContainer{
+    .backgroundphoto__lineContainer{
         position: relative;
         margin-bottom: 26px;
     }
-    .photo__text{
+    .backgroundphoto__text{
         font-size: 16px;
         font-family: 'Roboto', sans-serif;
+    }
+    .backgroundphoto__container{
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        height: 1000px;
+        width: 100%;
+        background-position: center top;
+        background-size: cover;
+        background-image: url("/img/img_7035.jpg");
+    }
+    .backgroundphoto__left{
+
+        flex: 0 0 8%;
+    }
+    .backgroundphoto__text{
+        flex: 0 0 33%;
+    }
+    .backgroundphoto__right{
+        flex: 0 0 59%;
+    }
+    .my-mission__container{
+        display: flex;
+        justify-content: center;
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0f0f0;
+        padding-bottom: 8em;
+        flex-wrap: wrap;
+    }
+    .my-mission__container > div{
+        margin: 0 15px;
+    }
+    .my-mission__header{
+        flex: 0 0 100%;
+    }
+    .my-mission__left{
+        flex: 0 0 16%;
+    }
+    .my-mission__center-left{
+        flex: 0 0 24%;
+    }
+    .my-mission__center-right{
+        flex: 0 0 24%;
+    }
+    .my-mission__right{
+        flex: 0 0 16%;
+    }
+    .my-education__container{
+        display: flex;
+        justify-content: center;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 20px;
+    }
+    .my-education__block{
+        flex: 0 0 42%;
+    }
+
+    .column__header{
+        font-family: "Bebas Neue Bold";
+        font-size: 24px;
     }
     .black-background-text{
         text-align: center;
@@ -88,82 +125,38 @@
         height: 2px;
         background: #fffffd;
     }
-    .backgroundphoto__container{
-        display: flex;
-        justify-content: center;
-        flex-wrap: nowrap;
-    }
-    .backgroundphoto__left{
-
-        flex: 0 0 8%;
-    }
-    .backgroundphoto__text{
-        flex: 0 0 33%;
-    }
-    .backgroundphoto__right{
-        flex: 0 0 59%;
-    }
-    .container__my-mission{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .my-mission__header{
-        flex: 0 0 100%;
-    }
-    .my-mission__left{
-        flex: 0 0 16%;
-    }
-    .my-mission__center-left{
-        flex: 0 0 24%;
-    }
-    .my-mission__center-right{
-        flex: 0 0 24%;
-    }
-    .my-mission__right{
-        flex: 0 0 16%;
-    }
-    .container__my-education{
-        display: flex;
-        justify-content: center;
-    }
-    .my-education__block{
-        flex: 0 0 42%;
-    }
 </style>
 <body>
 <div  id="sticky-navbar" th:include="components/parts :: header"></div>
 <br>
 <br>
-<div class="backgroundphoto">
-    <div class="backgroundphoto__container">
-        <div class="backgroundphoto__left">
-        </div>
-        <div class="backgroundphoto__text" style="font-family: 'Roboto', sans-serif">
-            <div style="padding-top: 150px">
-                <div class="photo__lineContainer">
-                    <div class="photo__header" style="font-size: 40px; font-weight: 700;">
-                        АЛСУ АТАЕВА
-                    </div>
-                </div>
-                <div class="photo__text">
-                <span class="bold fs18">Hi! Я Алсу, сертифицированный фитнес-тренер.<br>
-                Очередная фитоняшка? Nope. <br></span>
-                    У меня нет никакой «авторской методики» похудения, и я не устраиваю марафоны-«сушки», чтобы сделать вас временно стройными в ущерб здоровью.
-                    <br>
-                    <br>
-                    Я стараюсь не отставать от последних научных данных в фитнесе и придерживаться здравого смысла в вопросах тренировок и питания. Поэтому от меня не услышать чуши типа «сахар – зло», «BCAA усиливает рост мышц» (читайте мое <span class="bolder">руководство по питанию</span>) или «выводить колени за носки в приседаниях опасно».
-                    <br>
-                    <br>
-                    Вы можете тренироваться со мной <span class="bolder">персонально</span> и <span class="bolder">дистанционно</span>. Или заниматься самостоятельно по моим <span class="bolder">программам в PDF-формате</span>.
+<div class="backgroundphoto__container">
+    <div class="backgroundphoto__left">
+    </div>
+    <div class="backgroundphoto__text" style="font-family: 'Roboto', sans-serif">
+        <div style="padding-top: 150px">
+            <div class="backgroundphoto__lineContainer">
+                <div class="backgroundphoto__header" style="font-size: 40px; font-weight: 700;">
+                    АЛСУ АТАЕВА
                 </div>
             </div>
-        </div>
-        <div class="backgroundphoto__right">
+            <div class="backgroundphoto__text">
+            <span class="bold fs18">Hi! Я Алсу, сертифицированный фитнес-тренер.<br>
+            Очередная фитоняшка? Nope. <br></span>
+                У меня нет никакой «авторской методики» похудения, и я не устраиваю марафоны-«сушки», чтобы сделать вас временно стройными в ущерб здоровью.
+                <br>
+                <br>
+                Я стараюсь не отставать от последних научных данных в фитнесе и придерживаться здравого смысла в вопросах тренировок и питания. Поэтому от меня не услышать чуши типа «сахар – зло», «BCAA усиливает рост мышц» (читайте мое <span class="bolder">руководство по питанию</span>) или «выводить колени за носки в приседаниях опасно».
+                <br>
+                <br>
+                Вы можете тренироваться со мной <span class="bolder">персонально</span> и <span class="bolder">дистанционно</span>. Или заниматься самостоятельно по моим <span class="bolder">программам в PDF-формате</span>.
+            </div>
         </div>
     </div>
+    <div class="backgroundphoto__right">
+    </div>
 </div>
-<div class="container__my-mission">
+<div class="my-mission__container">
     <div class="my-mission__header">
         <br>
         <br>
@@ -176,12 +169,12 @@
         <br>
         <br>
     </div>
-    <div class="col-2 my-mission__left"><span class="bolder fs18">МОЯ МИССИЯ</span><span class="bold fs18"> – сделать так, чтобы как можно больше людей стали более грамотными в вопросах ЗОЖ, перестали верить мифам и начали менять жизнь к лучшему.
+    <div class="my-mission__left"><span class="bolder fs18">МОЯ МИССИЯ</span><span class="bold fs18"> – сделать так, чтобы как можно больше людей стали более грамотными в вопросах ЗОЖ, перестали верить мифам и начали менять жизнь к лучшему.
 <br><br>
         Я хочу, чтобы фитнес выполнял свое истинное предназначение – делал людей здоровее. Не только физически, но и морально.
 <br><br>
         Сегодня ситуация, к сожалению, другая. И я одна из тех, кто хочет это изменить.</span></div>
-    <div class="col-3 my-mission__center-left"><span class="column__header">ТЕМНАЯ СТОРОНА ФИТНЕСА</span><br>
+    <div class="my-mission__center-left"><span class="column__header">ТЕМНАЯ СТОРОНА ФИТНЕСА</span><br>
         В сети бесконечное множество противоречивой информации на тему тренировок и особенно питания.
         <br><br>
         Как стать тренером или фитнес-блогером и оказывать на людей влияние? Похудей на десятки кг любым (нездоровым) методом, продемонстрируй свою лучшую форму после жесткой диеты, выкладывай фото в лучших ракурсах и, если генетически не одарен, – используй анаболические стероиды и пускай пыль в глаза подписчиков и клиентов. Продвигай бесполезные добавки и топи за #пп, хотя втихаря ты грезишь о чипсах и коле.
@@ -214,7 +207,7 @@
 <br>
 <br>
 <br>
-<div class="container__my-education">
+<div class="my-education__container">
     <div class="my-education__block">
         <div style="font-size: 34px; font-weight: 700; letter-spacing: 0.1em;">МОЕ ОБРАЗОВАНИЕ</div>
         <br>
