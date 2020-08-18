@@ -7,125 +7,16 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" th:href="@{/css/fonts.css}">
+    <link rel="stylesheet" th:href="@{/css/about.css}">
 <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
     <link href="https://fonts.googleapis.com/css?family=Inter:400,500,700|Raleway:400,500,700|Rubik:400,500,700&display=swap&subset=cyrillic"
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>-->
 <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
-<style>
-    .backgroundphoto__header:before{
-        position: absolute;
-        content: '';
-        height: 2px;
-        bottom: -9px;
-        left: 0;
-        width: 8em;
-        background-color: #414141;
-    }
-    .backgroundphoto__lineContainer{
-        position: relative;
-        margin-bottom: 26px;
-    }
-    .backgroundphoto__text{
-        font-size: 16px;
-        font-family: 'Roboto', sans-serif;
-    }
-    .backgroundphoto__container{
-        display: flex;
-        justify-content: center;
-        flex-wrap: nowrap;
-        height: 1000px;
-        width: 100%;
-        background-position: center top;
-        background-size: cover;
-        background-image: url("/img/img_7035.jpg");
-    }
-    .backgroundphoto__left{
-
-        flex: 0 0 8%;
-    }
-    .backgroundphoto__text{
-        flex: 0 0 33%;
-    }
-    .backgroundphoto__right{
-        flex: 0 0 59%;
-    }
-    .my-mission__container{
-        display: flex;
-        justify-content: center;
-        font-family: 'Roboto', sans-serif;
-        background-color: #f0f0f0;
-        padding-bottom: 8em;
-        flex-wrap: wrap;
-    }
-    .my-mission__container > div{
-        margin: 0 15px;
-    }
-    .my-mission__header{
-        flex: 0 0 100%;
-    }
-    .my-mission__left{
-        flex: 0 0 16%;
-    }
-    .my-mission__center-left{
-        flex: 0 0 24%;
-    }
-    .my-mission__center-right{
-        flex: 0 0 24%;
-    }
-    .my-mission__right{
-        flex: 0 0 16%;
-    }
-    .my-education__container{
-        display: flex;
-        justify-content: center;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
-        font-size: 20px;
-    }
-    .my-education__block{
-        flex: 0 0 42%;
-    }
-
-    .column__header{
-        font-family: "Bebas Neue Bold";
-        font-size: 24px;
-    }
-    .black-background-text{
-        text-align: center;
-        color: #fffffd;
-        background: #262523;
-        padding: 120px 0px;
-        width: 100%;
-        position: relative;
-    }
-    .black-background-text:after{
-        content: '';
-        left: 50%;
-        transform: translate(-50%, 70px);
-        top: 0;
-        position: absolute;
-        width: 760px;
-        max-width: 92%;
-        height: 2px;
-        background: #fffffd;
-    }
-    .black-background-text:before{
-        content: '';
-        left: 50%;
-        transform: translate(-50%, -70px);
-        bottom: 0;
-        position: absolute;
-        width: 760px;
-        max-width: 92%;
-        height: 2px;
-        background: #fffffd;
-    }
-</style>
 <body>
 <div  id="sticky-navbar" th:include="components/parts :: header"></div>
 <br>
