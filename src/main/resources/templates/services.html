@@ -19,6 +19,8 @@
         justify-content: center;
     }
     .grid__poster{
+        padding: 4px;
+        position: relative;
         display: flex;
         flex: 0 0 30%;
         border: 1px solid rgba(133, 133, 133, 0.47);
@@ -30,51 +32,86 @@
         justify-content: flex-start;
         align-items: flex-end;
     }
-    .poster__header:after{
+    .poster__header:before{
         content: '';
         position: absolute;
         background-color: gray;
         height: 2px;
         left: 0;
         bottom: 0;
-        width: 0%;
-        transform: translate(-1.5%, 20px);
+        width: 100%;
+        /*transform: translate(0px, 5px);*/
     }
 
     .poster__lineContainer{
-        position: relative;
         color: gray;
     }
 
     .poster__header{
+        position: relative;
         color: #fffffd;
         font-family: "Bebas Neue Bold";
         font-size: 30px;
         margin-bottom: 10px;
+        width: max-content;
     }
-
+    .poster__fulltext{
+        padding: 4px;
+        background-color: red;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: none;
+        align-items: flex-end;
+    }
+    .--visible{
+        display: flex;
+    }
 </style>
 <body>
-<div  id="sticky-navbar" th:include="components/parts :: header"></div>
+<!--<div  id="sticky-navbar" th:include="components/parts :: header"></div>-->
 <div class="container">
     <div class="container__grid">
         <div class="grid__poster">
             <div class="poster__lineContainer">
                 <div class="poster__header">
-                    ОНЛАЙН-ТРЕНИРОВКИ
+                    Текст
                 </div>
                 <div class="poster__text">
-                    ...
+                    мало текста
+                </div>
+            </div>
+            <div class="poster__fulltext">
+                <div class="poster__lineContainer">
+                    <div class="poster__header">
+                        ТЕКСТ
+                    </div>
+                    <div class="poster__text">
+                        ЕЩЕ БОЛЬШЕ ТЕКСТА
+                    </div>
                 </div>
             </div>
         </div>
         <div class="grid__poster">
             <div class="poster__lineContainer">
                 <div class="poster__header">
-                    ПЕРСОНАЛЬНЫЕ ТРЕНИРОВКИ
+                    ТЕКСТ
                 </div>
                 <div class="poster__text">
-                    ...
+                    мало текста
+                </div>
+            </div>
+            <div class="poster__fulltext">
+                <div class="poster__lineContainer">
+                    <div class="poster__header">
+                        Текст
+                    </div>
+                    <div class="poster__text">
+                        ЕЩЕ БОЛЬШЕ ТЕКСТА
+                    </div>
                 </div>
             </div>
         </div>
@@ -84,4 +121,14 @@
 <br>
 </body>
 <script th:src="@{/scripts/cart.js}"></script>
+<script>
+    document.querySelectorAll('.grid__poster').forEach(item => {
+        item.addEventListener('mouseenter', event => {
+            item.querySelector(".poster__fulltext").classList.toggle("--visible");
+        })
+        item.addEventListener('mouseleave', event => {
+            item.querySelector(".poster__fulltext").classList.toggle("--visible");
+        })
+    })
+</script>
 </html>
