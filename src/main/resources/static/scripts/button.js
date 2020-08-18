@@ -4,10 +4,10 @@ Array.prototype.forEach.call(parent, child => {
                 let currentButton = event.currentTarget;
                 if(currentButton.className === "button"){
                     currentButton.className = "button-non-active"
-                    currentButton.innerHTML = `<div class="button__animation">
-        <div class="button__dot"></div>
-        <div class="button__dot"></div>
-        <div class="button__dot"></div>
+                    currentButton.innerHTML = `<div class="button__progress">
+        <div class="button__value"></div>
+<!--        <div class="button__dot"></div>-->
+<!--        <div class="button__dot"></div>-->
 </div>`;
             setTimeout(() => {
                 console.log(currentButton.innerHTML);

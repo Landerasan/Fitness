@@ -264,58 +264,65 @@
         </div>
     </nav>
 </div>
-<div th:fragment="footer">
-    <style>
-        footer {
-            background: #b8926a;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            white-space: nowrap;
-        }
+<!--<div th:fragment="footer-bootstrap">-->
+<!--    <style>-->
+<!--        footer {-->
+<!--            background: #b8926a;-->
+<!--            display: flex;-->
+<!--            justify-content: space-between;-->
+<!--            align-items: center;-->
+<!--            white-space: nowrap;-->
+<!--        }-->
 
-        .text-footer {
-            color: white;
-            font-weight: bold;
-            font-size: 20px;
-        }
+<!--        .text-footer {-->
+<!--            color: white;-->
+<!--            font-weight: bold;-->
+<!--            font-size: 20px;-->
+<!--        }-->
 
-        .logo-footer img {
-            max-width: 120px;
-            opacity: 1;
-            padding-left: 30px;
-            padding-right: 30px;
-        }
+<!--        .logo-footer img {-->
+<!--            max-width: 120px;-->
+<!--            opacity: 1;-->
+<!--            padding-left: 30px;-->
+<!--            padding-right: 30px;-->
+<!--        }-->
 
-        footer .fab {
-                 padding: 10px;
-                 font-size: 60px;
-                 width: 30px;
-                 text-align: center;
-                 text-decoration: none;
-                 margin: 5px 2px;
-                 border-radius: 50%;
-             }
+<!--        footer .fab {-->
+<!--                 padding: 10px;-->
+<!--                 font-size: 60px;-->
+<!--                 width: 30px;-->
+<!--                 text-align: center;-->
+<!--                 text-decoration: none;-->
+<!--                 margin: 5px 2px;-->
+<!--                 border-radius: 50%;-->
+<!--             }-->
 
-        footer .fa-instagram {
-            background: white;
-            color: #b8926a;
-        }
+<!--        footer .fa-instagram {-->
+<!--            background: white;-->
+<!--            color: #b8926a;-->
+<!--        }-->
 
-        footer .fa-telegram {
-            background: white;
-            color: #b8926a;
-        }
+<!--        footer .fa-telegram {-->
+<!--            background: white;-->
+<!--            color: #b8926a;-->
+<!--        }-->
 
-        footer .icons-footer {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-    </style>
-    <footer>
-        <div class="icons-footer">
-            <a href="https://www.instagram.com/realalsou/" class="fab fabinstagram"></a>
-            <a href="#" class="fab fa-telegram"></a>
-        </div>
-    </footer>
+<!--        footer .icons-footer {-->
+<!--            padding-left: 20px;-->
+<!--            padding-right: 20px;-->
+<!--        }-->
+<!--    </style>-->
+<!--    <footer>-->
+<!--        <div class="icons-footer">-->
+<!--            <a href="https://www.instagram.com/realalsou/" class="fab fabinstagram"></a>-->
+<!--            <a href="#" class="fab fa-telegram"></a>-->
+<!--        </div>-->
+<!--    </footer>-->
+<!--</div>-->
+<div th:fragment="footer" class="footer">
+    <div class="footer__icon-container">
+        <a class="fab fa-whatsapp"></a>
+        <a class="fab fa-instagram"></a>
+        <a class="fab fa-telegram"></a>
+    </div>
 </div>

@@ -125,16 +125,6 @@
     height: 2px;
     background: #fffffd;
 }
-.footer{
-    display: flex;
-    color: black;
-    justify-content: center;
-    text-align: center;
-    background: #fffffd;
-    padding: 80px 0px 40px 0px;
-    width: 100%;
-    font-size: 26px;
-}
 @media only screen and (max-width: 768px) {
     .button{
         margin: 1.8em auto;
@@ -149,4 +139,26 @@
         font-size: 22px;
         line-height: 22px;
     }
+}
+
+ .button__progress {
+     background: rgba(255,255,255,0.1);
+     justify-content: flex-start;
+     align-items: center;
+     position: relative;
+     display: flex;
+     height: 60px;
+     width: 500px;
+ }
+
+.button__value {
+    animation: load 2s normal forwards;
+    background: #000000;
+    height: 60px;
+    width: 0;
+}
+
+@keyframes load {
+    0% { width: 0; }
+    100% { width: 100%; }
 }
