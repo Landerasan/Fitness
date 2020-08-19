@@ -30,31 +30,6 @@
     width: 100%;
 }
 
-.button, .button-non-active{
-    outline: none;
-    background-color: white; /* Green */
-    border: 2px solid rgba(40, 40, 40, 0.85);
-    height: 60px;
-    width: 188px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    letter-spacing: 0.25em;
-    font-size: 16px;
-    font-weight: 400;
-    margin: 1.4em 2px;
-    cursor: pointer;
-    transition: 300ms;
-}
-
-.button:hover{
-    background-color: rgb(40, 40, 40);
-}
-
-.button:hover div{
-    color: white;
-}
-
 @media only screen and (max-width: 768px) {
     .text-header {
         display: none;
@@ -69,32 +44,7 @@
         display: none;
     }
 }
-.button div {
-    color: rgba(40, 40, 40, 0.85);
-}
-.button__dot{
-    height: 20px;
-    width: 20px;
-    background-color: white;
-    border-radius: 50%;
-    display: inline-block;
-}
-.button__animation{
-    height: 50px;
-    width: 120px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.button__dot:nth-child(1){
-    animation-delay: 0ms;
-}
-.button__dot:nth-child(2){
-    animation-delay: 300ms;
-}
-.button__dot:nth-child(3){
-    animation-delay: 600ms;
-}
+
 .black-background-text{
     text-align: center;
     color: #fffffd;
@@ -139,6 +89,58 @@
         font-size: 22px;
         line-height: 22px;
     }
+}
+
+.button div {
+    color: rgba(40, 40, 40, 0.85);
+}
+.button__dot{
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+}
+.button__animation{
+    height: 50px;
+    width: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.button__dot:nth-child(1){
+    animation-delay: 0ms;
+}
+.button__dot:nth-child(2){
+    animation-delay: 300ms;
+}
+.button__dot:nth-child(3){
+    animation-delay: 600ms;
+}
+
+.button, .button-non-active{
+    outline: none;
+    background-color: white; /* Green */
+    border: 2px solid rgba(40, 40, 40, 0.85);
+    height: 60px;
+    width: 188px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.25em;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 1.4em 2px;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.button:hover{
+    background-color: rgb(40, 40, 40);
+}
+
+.button:hover div{
+    color: white;
 }
 
  .button__progress {

@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" th:href="@{/css/fonts.css}">
+    <link rel="stylesheet" th:href="@{/css/posters.css}">
     <link href="https://fonts.googleapis.com/css?family=Inter:400,500,700|Raleway:400,500,700|Rubik:400,500,700&display=swap&subset=cyrillic"
           rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>-->
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 <style>
@@ -42,11 +43,6 @@
         width: 100%;
         /*transform: translate(0px, 5px);*/
     }
-
-    .poster__lineContainer{
-        color: white;
-    }
-
     .poster__header{
         position: relative;
         color: #fffffd;
@@ -54,6 +50,11 @@
         font-size: 30px;
         margin-bottom: 10px;
         width: max-content;
+    }
+    .poster__lineContainer{
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
     }
     .poster__fulltext{
         padding: 4px;
@@ -67,8 +68,18 @@
         display: none;
         align-items: flex-end;
     }
+    .button__container{
+        display: flex;
+        justify-content: center;
+        flex: 0 0 100%;
+    }
+    .poster__text{
+        color: white;
+        flex: 0 0 100%;
+    }
     .--visible{
         display: flex;
+        flex-wrap: wrap;
     }
 </style>
 <body>
@@ -78,7 +89,7 @@
         <div class="grid__poster">
             <div class="poster__lineContainer">
                 <div class="poster__header">
-                    Текст
+                    ТЕКСТ
                 </div>
                 <div class="poster__text">
                     мало текста
@@ -87,10 +98,13 @@
             <div class="poster__fulltext">
                 <div class="poster__lineContainer">
                     <div class="poster__header">
-                        ТЕКСТ
+                        Текст
                     </div>
                     <div class="poster__text">
                         ЕЩЕ БОЛЬШЕ ТЕКСТА
+                    </div>
+                    <div class="button__container">
+                        <button  class="button" type="button" onclick="CART.add(3)"><div>КУПИТЬ</div></button>
                     </div>
                 </div>
             </div>
@@ -112,6 +126,9 @@
                     <div class="poster__text">
                         ЕЩЕ БОЛЬШЕ ТЕКСТА
                     </div>
+                    <div class="button__container">
+                        <button  class="button" type="button" onclick="CART.add(3)"><div>КУПИТЬ</div></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -124,11 +141,12 @@
 <script>
     document.querySelectorAll('.grid__poster').forEach(item => {
         item.addEventListener('mouseenter', event => {
-            item.querySelector(".poster__fulltext").classList.toggle("--visible");
+            item.querySelector(".poster__fulltext").classList.add("--visible");
         })
         item.addEventListener('mouseleave', event => {
-            item.querySelector(".poster__fulltext").classList.toggle("--visible");
+            item.querySelector(".poster__fulltext").classList.remove("--visible");
         })
     })
 </script>
+<script th:src="@{/scripts/button.js}"></script>
 </html>
