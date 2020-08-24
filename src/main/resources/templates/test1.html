@@ -1,44 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+</head>
 <style>
-    body {
-        justify-content: center;
-        align-items: center;
-        background: #000;
+    .settingsWindow {
+        width: 400px;
+        height: 200px;
+        border: solid black 2px;
+        position: absolute;
+        outline: none;
+        background-color: white;
         display: flex;
-        height: 20vh;
+        flex-wrap: wrap;
+        z-index: 0;
+    }
+    .icon__close{
+        background-color: red;
+        display: block;
+        position: relative;
+        height: 16px;
+        width: 16px;
+        z-index: 3;
+        cursor: pointer;
+    }
+    .icon__close::before,
+    .icon__close::after{
+        content: '';
+        background-color: #262523;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        bottom: 50%;
+    }
+    .icon__close::before{
+        transform: rotate(45deg);
+    }
+    .icon__close::after{
+        transform: rotate(-45deg);
+    }
+    .settings__icon{
+        display: flex;
+        align-self: flex-start;
+        justify-content: flex-end;
+        flex: 0 0 100%;
+    }
+    .icon__bar{
+        width: 100%;
+        background: blue;
+    }
+    .setting__accept{
+        align-self: flex-end;
+        justify-content: flex-end;
+        display: flex;
+        flex: 0 0 100%;
+    }
+    .accept__text{
+        padding: 2px 4px;
+        border: solid black 2px;
+        background: red;
+        cursor: pointer;
+    }
+    .settings__option{
+        justify-self: start;
+    }
+    .settings__block{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 100%;
+        padding: 0 10%;
+    }
+    .settings__combobox{
+        justify-self: end;
+    }
+    #settings__color{
+        border: none;
         padding: 0;
+        background: none;
+        user-select: none;
+        appearance: none;
+        display: block;
+        height: 17px;
         margin: 0;
     }
-
-    .progress {
-        background: rgba(255,255,255,0.1);
-        justify-content: flex-start;
-        align-items: center;
-        position: relative;
-        display: flex;
-        height: 40px;
-        width: 500px;
-    }
-
-    .progress-value {
-        animation: load 3s infinite forwards;
-        box-shadow: 0 10px 40px -10px #fff;
-        background: #fff;
-        height: 40px;
-        width: 0;
-    }
-
-    @keyframes load {
-        0% { width: 0; }
-        100% { width: 100%; }
-    }
 </style>
-</head>
 <body>
-<div class="progress">
-    <div class="progress-value"></div>
-</div>
+<!--<div class="settingsWindow">-->
+<!--    <div class="settings__icon">-->
+<!--        <div class="icon__bar"></div>-->
+<!--        <div class="icon__close"></div>-->
+<!--    </div>-->
+<!--    <div class="settings__block">-->
+<!--        <div class="settings__option">Выбор линии-->
+<!--        </div>-->
+<!--        <div class="settings__combobox">-->
+<!--            <select>-->
+<!--                <option value="0">0</option>-->
+<!--                <option value="1">1</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div class="settings__option">Тип интерполяции-->
+<!--        </div>-->
+<!--        <div class="settings__combobox">-->
+<!--            <select>-->
+<!--                <option value="0">Линейная</option>-->
+<!--                <option value="1">Ступенчатая</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div class="settings__option">Цвет линии-->
+<!--        </div>-->
+<!--        <div class="settings__combobox">-->
+<!--            <input id="settings__color" type="color">-->
+<!--        </div>-->
+<!--        <div class="settings__option">Отобразить-->
+<!--        </div>-->
+<!--        <div class="settings__combobox">-->
+<!--            <select>-->
+<!--                <option value="0">Да</option>-->
+<!--                <option value="1">Нет</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="setting__accept">-->
+<!--        <div class="accept__text">Применить</div>-->
+<!--    </div>-->
+<!--</div>-->
 </body>
+<script>
+
+</script>
 </html>
